@@ -498,6 +498,59 @@
                 padding: 8px 6px;
             }
         }
+        .sort-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.sort-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-group label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.sort-select {
+    padding: 8px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background-color: #232323;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-select option {
+    background-color: #232323;
+    color: #fff;
+}
+
+.sort-select:hover,
+.sort-select:focus {
+    background-color: #232323;
+    border-color: #ff9900;
+    box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sort-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .sort-group {
+        flex-direction: column;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -534,6 +587,25 @@
                     {{ category }}
                 </div>
             </div>
+            <div class="sort-controls">
+    <div class="sort-group">
+        <label>排序方式：</label>
+        <select v-model="sortBy" class="sort-select">
+            <option value="name">武器名称</option>
+            <option value="body">身体伤害</option>
+            <option value="head">头部伤害</option>
+            <option value="rpm">射速 (RPM)</option>
+            <option value="magazine">弹匣容量</option>
+        </select>
+    </div>
+    <div class="sort-group">
+        <label>排序顺序：</label>
+        <select v-model="sortDirection" class="sort-select">
+            <option value="asc">升序</option>
+            <option value="desc">降序</option>
+        </select>
+    </div>
+</div>
             
             <div class="weapons-grid">
                 <div v-for="weapon in filteredWeapons" :key="weapon.weapon_name" 
@@ -773,11 +845,13 @@
             setup() {
                 const weapons = ref([]);
                 const searchQuery = ref('');
-                const activeCategory = ref('Heavy');
+                const activeCategory = ref('All');
                 const activeView = ref('list');
                 const activeRanking = ref('light');
                 const selectedWeapons = ref([]);
                 const showCompare = ref(false);
+                const sortBy = ref('name');
+                const sortDirection = ref('asc');
                 
                 const categories = ['All', 'Heavy', 'Light', 'Medium'];
 
@@ -789,32 +863,67 @@
                   } catch (error) {
                     console.error("failed to load weapon data:", error);
                   }
-};
+                };
                 
-                // 过滤武器列表
+                // 过滤并排序武器列表
                 const filteredWeapons = computed(() => {
                   const query = searchQuery.value.toLowerCase().trim();
-    
-                  return weapons.value.filter(weapon => {
+                  
+                  // 先过滤
+                  let filtered = weapons.value.filter(weapon => {
                     const matchesCategory = activeCategory.value === 'All' || weapon.infobox.Build === activeCategory.value;
-        
+            
                     if (!query) return matchesCategory;
-        
-                    // 检查武器名称
+            
                     const nameMatch = weapon.weapon_name.toLowerCase().includes(query);
-        
-                    // 检查别名数组
                     const aliasMatch = weapon.aliases && 
                       Array.isArray(weapon.aliases) && 
                       weapon.aliases.some(alias => 
                         alias.toLowerCase().includes(query)
                       );
-        
-                    // 检查显示名称中的其他可能匹配（如型号等）
                     const typeMatch = weapon.infobox.Type.toLowerCase().includes(query);
-        
+            
                     return matchesCategory && (nameMatch || aliasMatch || typeMatch);
                   });
+                  
+                  // 再排序
+                  const sorted = [...filtered].sort((a, b) => {
+                    let valueA, valueB;
+                    
+                    switch (sortBy.value) {
+                        case 'name':
+                            valueA = a.weapon_name.toLowerCase();
+                            valueB = b.weapon_name.toLowerCase();
+                            break;
+                        case 'body':
+                            valueA = parseFloat(a.infobox.Body) || 0;
+                            valueB = parseFloat(b.infobox.Body) || 0;
+                            break;
+                        case 'head':
+                            valueA = parseFloat(a.infobox.Head) || 0;
+                            valueB = parseFloat(b.infobox.Head) || 0;
+                            break;
+                        case 'rpm':
+                            valueA = parseFloat(a.infobox.RPM) || 0;
+                            valueB = parseFloat(b.infobox.RPM) || 0;
+                            break;
+                        case 'magazine':
+                            valueA = parseFloat(a.infobox.Magazine) || 0;
+                            valueB = parseFloat(b.infobox.Magazine) || 0;
+                            break;
+                        default:
+                            valueA = a.weapon_name.toLowerCase();
+                            valueB = b.weapon_name.toLowerCase();
+                    }
+                    
+                    if (sortDirection.value === 'asc') {
+                        return valueA > valueB ? 1 : -1;
+                    } else {
+                        return valueA < valueB ? 1 : -1;
+                    }
+                  });
+                  
+                  return sorted;
                 });
                 
                 // 检查武器是否被选中
@@ -915,51 +1024,51 @@
                 };
                 
                 // 按击杀时间排序的武器列表（排除近战武器）
-        const rankedWeapons = computed(() => {
-            // 过滤出非近战武器
-            const nonMeleeWeapons = weapons.value.filter(weapon => 
-                weapon.infobox.Type !== "近战 Melee" && 
-                weapon.infobox.Type !== "Melee"
-            );
-            
-            // 过滤出近战武器
-            const meleeWeapons = weapons.value.filter(weapon => 
-                weapon.infobox.Type === "近战 Melee" || 
-                weapon.infobox.Type === "Melee"
-            );
-            
-            // 对非近战武器进行排序
-            const sortedNonMelee = [...nonMeleeWeapons].sort((a, b) => {
-                const aTTK = getBodyTTK(a, activeRanking.value);
-                const bTTK = getBodyTTK(b, activeRanking.value);
+                const rankedWeapons = computed(() => {
+                    // 过滤出非近战武器
+                    const nonMeleeWeapons = weapons.value.filter(weapon => 
+                        weapon.infobox.Type !== "近战 Melee" && 
+                        weapon.infobox.Type !== "Melee"
+                    );
+                    
+                    // 过滤出近战武器
+                    const meleeWeapons = weapons.value.filter(weapon => 
+                        weapon.infobox.Type === "近战 Melee" || 
+                        weapon.infobox.Type === "Melee"
+                    );
+                    
+                    // 对非近战武器进行排序
+                    const sortedNonMelee = [...nonMeleeWeapons].sort((a, b) => {
+                        const aTTK = getBodyTTK(a, activeRanking.value);
+                        const bTTK = getBodyTTK(b, activeRanking.value);
+                        
+                        if (typeof aTTK !== 'number') return 1;
+                        if (typeof bTTK !== 'number') return -1;
+                        
+                        return aTTK - bTTK;
+                    });
+                    
+                    // 将近战武器放在最后
+                    return [...sortedNonMelee, ...meleeWeapons];
+                });
                 
-                if (typeof aTTK !== 'number') return 1;
-                if (typeof bTTK !== 'number') return -1;
+                // 检查是否为近战武器
+                const isMeleeWeapon = (weapon) => {
+                    return weapon.infobox.Type === "近战 Melee" || 
+                           weapon.infobox.Type === "Melee" ||
+                           weapon.infobox.Type.includes("近战");
+                };
                 
-                return aTTK - bTTK;
-            });
-            
-            // 将近战武器放在最后
-            return [...sortedNonMelee, ...meleeWeapons];
-        });
-        
-        // 检查是否为近战武器
-        const isMeleeWeapon = (weapon) => {
-            return weapon.infobox.Type === "近战 Melee" || 
-                   weapon.infobox.Type === "Melee" ||
-                   weapon.infobox.Type.includes("近战");
-        };
-        
-        // 获取近战武器伤害显示
-        const getMeleeDamage = (weapon) => {
-            if (!isMeleeWeapon(weapon)) return null;
-            
-            let damageText = `左键: ${weapon.infobox.Body}`;
-            if (weapon.infobox["Alt-Fire"]) {
-                damageText += ` | 右键: ${weapon.infobox["Alt-Fire"]}`;
-            }
-            return damageText;
-        };
+                // 获取近战武器伤害显示
+                const getMeleeDamage = (weapon) => {
+                    if (!isMeleeWeapon(weapon)) return null;
+                    
+                    let damageText = `左键: ${weapon.infobox.Body}`;
+                    if (weapon.infobox["Alt-Fire"]) {
+                        damageText += ` | 右键: ${weapon.infobox["Alt-Fire"]}`;
+                    }
+                    return damageText;
+                };
                 
                 onMounted(() => {
                     initWeaponData();
@@ -974,6 +1083,8 @@
                     selectedWeapons,
                     showCompare,
                     categories,
+                    sortBy,
+                    sortDirection,
                     filteredWeapons,
                     rankedWeapons,
                     isSelected,
@@ -989,6 +1100,6 @@
                 };
             }
         }).mount('#app');
-    </script>
+</script>
 </body>
 </html>
