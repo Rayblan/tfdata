@@ -1,0 +1,2270 @@
+[
+  {
+    "weapon_name": "93R",
+    "url": "https://www.thefinals.wiki/wiki/93R",
+    "infobox": {
+      "Weapon Quote": "“Burst-fire machine pistol”",
+      "Build": "Light",
+      "Type": "手枪 Handgun",
+      "Price": "500",
+      "Body": "26",
+      "Head": "39",
+      "Min Range": "32m",
+      "Max Range": "40m",
+      "Multiplier": "0.4",
+      "RPM": "210",
+      "Magazine": "24",
+      "Empty Reload": "1.75s",
+      "Tactical Reload": "1.45s"
+    },
+    "parsed_overflow": {
+      "damage_data": {
+        "headers": [
+          "Body Part",
+          "Light (150 HP)",
+          "Medium (250 HP)",
+          "Heavy (350 HP)"
+        ],
+        "sub_headers": [
+          "Bullets to kill",
+          "Time to kill (s)",
+          "Bullets to kill",
+          "Time to kill (s)",
+          "Bullets to kill",
+          "Time to kill (s)"
+        ],
+        "rows": [
+          {
+            "body_part": "Head",
+            "light": {
+              "shells_to_kill": "4",
+              "time_to_kill": "0.40"
+            },
+            "medium": {
+              "shells_to_kill": "7",
+              "time_to_kill": "0.79"
+            },
+            "heavy": {
+              "shells_to_kill": "9",
+              "time_to_kill": "0.91"
+            }
+          },
+          {
+            "body_part": "Body",
+            "light": {
+              "shells_to_kill": "6",
+              "time_to_kill": "0.52"
+            },
+            "medium": {
+              "shells_to_kill": "10",
+              "time_to_kill": "1.19"
+            },
+            "heavy": {
+              "shells_to_kill": "14",
+              "time_to_kill": "1.64"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "weapon_name": "ARN-220",
+    "url": "https://www.thefinals.wiki/wiki/ARN-220",
+    "infobox": {
+      "Weapon Quote": "“A tactical assault rifle with coupled mags for quick swaps in the heat of combat.”",
+      "Build": "Light",
+      "Type": "突击步枪 Assault Rifle",
+      "Price": "500",
+      "Body": "17",
+      "Head": "25.5 (1.5×)",
+      "Min Range": "37.5m",
+      "Max Range": "42.5m",
+      "Multiplier": "0.72",
+      "RPM": "720",
+      "Magazine": "30×2",
+      "Empty Reload": "2.80s, 0.75s (Swap Mag)",
+      "Tactical Reload": "2.45s"
+    },
+    "parsed_overflow": {
+      "damage_data": {
+        "headers": [
+          "Body Part",
+          "Light (150 HP)",
+          "Medium (250 HP)",
+          "Heavy (350 HP)"
+        ],
+        "sub_headers": [
+          "Bullets to kill",
+          "Time to kill (s)",
+          "Bullets to kill",
+          "Time to kill (s)",
+          "Bullets to kill",
+          "Time to kill (s)"
+        ],
+        "rows": [
+          {
+            "body_part": "Head",
+            "light": {
+              "shells_to_kill": "6",
+              "time_to_kill": "0.41"
+            },
+            "medium": {
+              "shells_to_kill": "10",
+              "time_to_kill": "0.74"
+            },
+            "heavy": {
+              "shells_to_kill": "14",
+              "time_to_kill": "1.08"
+            }
+          },
+          {
+            "body_part": "Body",
+            "light": {
+              "shells_to_kill": "9",
+              "time_to_kill": "0.66"
+            },
+            "medium": {
+              "shells_to_kill": "15",
+              "time_to_kill": "1.16"
+            },
+            "heavy": {
+              "shells_to_kill": "21",
+              "time_to_kill": "1.66"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+  "weapon_name": "匕首",
+  "url": "https://www.thefinals.wiki/wiki/Dagger",
+  "infobox": {
+    "Weapon Quote": "“Close-range melee weapon; can also perform a secondary backstabbing attack”",
+    "Build": "Light",
+    "Type": "近战 Melee",
+    "Price": "800",
+    "Body": "60",
+    "Alt-Fire": "75, 320 (Backstab)"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Back (Alt-Fire)",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "1",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "-"
+          }
+        },
+        {
+          "body_part": "Body (Alt-Fire)",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "-"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "5",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "6",
+            "time_to_kill": "-"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "LH1",
+  "url": "https://www.thefinals.wiki/wiki/LH1",
+  "infobox": {
+    "Weapon Quote": "“Semi-automatic battle rifle.”",
+    "Build": "Light",
+    "Type": "精确射击武器 Marksman Rifle",
+    "Price": "500",
+    "Body": "42",
+    "Head": "84",
+    "Min Range": "50m",
+    "Max Range": "55m",
+    "Multiplier": "0.75",
+    "RPM": "270",
+    "Magazine": "15",
+    "Empty Reload": "2.85s",
+    "Tactical Reload": "1.95s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.22"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.44"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.89"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.67"
+          },
+          "medium": {
+            "shells_to_kill": "6",
+            "time_to_kill": "1.11"
+          },
+          "heavy": {
+            "shells_to_kill": "9",
+            "time_to_kill": "1.78"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "M11",
+  "url": "https://www.thefinals.wiki/wiki/M11",
+  "infobox": {
+    "Weapon Quote": "“Fast-firing, fully automatic machine pistol”",
+    "Build": "Light",
+    "Type": "冲锋枪 SMG",
+    "Price": "Free",
+    "Body": "16",
+    "Head": "24",
+    "Min Range": "10m",
+    "Max Range": "17.5m",
+    "Multiplier": "0.52",
+    "RPM": "1000",
+    "Magazine": "40",
+    "Empty Reload": "1.85s",
+    "Tactical Reload": "1.55s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "7",
+            "time_to_kill": "0.36"
+          },
+          "medium": {
+            "shells_to_kill": "11",
+            "time_to_kill": "0.60"
+          },
+          "heavy": {
+            "shells_to_kill": "15",
+            "time_to_kill": "0.84"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "10",
+            "time_to_kill": "0.54"
+          },
+          "medium": {
+            "shells_to_kill": "16",
+            "time_to_kill": "0.90"
+          },
+          "heavy": {
+            "shells_to_kill": "22",
+            "time_to_kill": "1.26"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "M26 Matter",
+  "url": "https://www.thefinals.wiki/wiki/M26_Matter",
+  "infobox": {
+    "Weapon Quote": "“A light and compact pump-action shotgun that uses box magazines.”",
+    "Build": "Light",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "11×11",
+    "Head": "11×11",
+    "Min Range": "15m",
+    "Max Range": "25m",
+    "Multiplier": "0.65",
+    "RPM": "85",
+    "Magazine": "8",
+    "Empty Reload": "2.45s",
+    "Tactical Reload": "2.05s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.71"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.41"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.41"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.71"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.41"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.41"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "反曲弓",
+  "url": "https://www.thefinals.wiki/wiki/Recurve_Bow",
+  "infobox": {
+    "Weapon Quote": "“Shoots arrows in a curved arc; the arrows' effective range and damage will increase the further back the bowstring is drawn”",
+    "Build": "Light",
+    "Type": "精确射击武器 Marksman Rifle",
+    "Price": "500",
+    "Body": "60",
+    "Head": "90",
+    "Alt-Fire Body": "124 (Max Draw)",
+    "Alt-Fire Head": "186 (Max Draw)",
+    "RPM": "78, 48",
+    "Magazine": "∞",
+    "Empty Reload": "0.75s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head (Max Draw)",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "0.00"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.25"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.25"
+          }
+        },
+        {
+          "body_part": "Body (Max Draw)",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.25"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "2.50"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "2.50"
+          }
+        },
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.77"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.54"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.31"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.54"
+          },
+          "medium": {
+            "shells_to_kill": "5",
+            "time_to_kill": "3.08"
+          },
+          "heavy": {
+            "shells_to_kill": "6",
+            "time_to_kill": "3.85"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "SH1900",
+  "url": "https://www.thefinals.wiki/wiki/SH1900",
+  "infobox": {
+    "Weapon Quote": "“Double-barrel shotgun with a wide spread”",
+    "Build": "Light",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "13×15",
+    "Head": "13×15",
+    "Min Range": "10m",
+    "Max Range": "15m",
+    "Multiplier": "0.62",
+    "RPM": "80",
+    "Magazine": "2",
+    "Empty Reload": "2.60s",
+    "Tactical Reload": "2.20s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "0.00"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.75"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.75"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "0.00"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.75"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.75"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "SR-84",
+  "url": "https://www.thefinals.wiki/wiki/SR-84",
+  "infobox": {
+    "Weapon Quote": "“Bolt-action sniper rifle”",
+    "Build": "Light",
+    "Type": "精确射击武器 Marksman Rifle",
+    "Price": "Free",
+    "Body": "118",
+    "Head": "236",
+    "Min Range": "80m",
+    "Max Range": "100m",
+    "Multiplier": "0.75",
+    "RPM": "46",
+    "Magazine": "6",
+    "Empty Reload": "3.35",
+    "Tactical Reload": "1.95"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "0.00"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.30"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.30"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "1.30"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "2.61"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "2.61"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "长剑",
+  "url": "https://www.thefinals.wiki/wiki/Sword",
+  "infobox": {
+    "Weapon Quote": "“High-damage melee weapon; can also perform a secondary lunging attack”",
+    "Build": "Light",
+    "Type": "近战 Melee",
+    "Price": "500",
+    "Body": "88",
+    "Alt-Fire": "120"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Body (Alt-Fire)",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "-"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "-"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "飞刀",
+  "url": "https://www.thefinals.wiki/wiki/Throwing_Knives",
+  "infobox": {
+    "Weapon Quote": "“A set of silent projectiles that can be thrown in short bursts; can also be thrown in pairs”",
+    "Build": "Light",
+    "Type": "杂项 Miscellaneous",
+    "Price": "500",
+    "Body": "60",
+    "Head": "90",
+    "Alt-Fire Body": "140",
+    "Alt-Fire Head": "210",
+    "RPM": "545.45, 27.7",
+    "Magazine": "∞"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head (Alt-Fire)",
+          "light": {
+            "shells_to_kill": "1",
+            "time_to_kill": "0.00"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "2.17"
+          },
+          "heavy": {
+            "shells_to_kill": "2",
+            "time_to_kill": "2.17"
+          }
+        },
+        {
+          "body_part": "Body (Alt-Fire)",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "2.17"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "2.17"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "4.33"
+          }
+        },
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.11"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.78"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.89"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.78"
+          },
+          "medium": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.56"
+          },
+          "heavy": {
+            "shells_to_kill": "6",
+            "time_to_kill": "1.67"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "V9S",
+  "url": "https://www.thefinals.wiki/wiki/V9S",
+  "infobox": {
+    "Weapon Quote": "“Semi-automatic pistol”",
+    "Build": "Light",
+    "Type": "手枪 Handgun",
+    "Price": "500",
+    "Body": "40",
+    "Head": "60",
+    "Min Range": "10m",
+    "Max Range": "15m",
+    "Multiplier": "0.62",
+    "RPM": "360",
+    "Magazine": "20",
+    "Empty Reload": "1.50s",
+    "Tactical Reload": "1.25s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.33"
+          },
+          "medium": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.67"
+          },
+          "heavy": {
+            "shells_to_kill": "6",
+            "time_to_kill": "0.83"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.50"
+          },
+          "medium": {
+            "shells_to_kill": "7",
+            "time_to_kill": "1.00"
+          },
+          "heavy": {
+            "shells_to_kill": "9",
+            "time_to_kill": "1.33"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "XP-54",
+  "url": "https://www.thefinals.wiki/wiki/XP-54",
+  "infobox": {
+    "Weapon Quote": "“Tactical submachine gun”",
+    "Build": "Light",
+    "Type": "冲锋枪 SMG",
+    "Price": "500",
+    "Body": "16",
+    "Head": "24",
+    "Min Range": "22.5m",
+    "Max Range": "32.5m",
+    "Multiplier": "0.52",
+    "RPM": "860",
+    "Magazine": "34",
+    "Empty Reload": "2.50s",
+    "Tactical Reload": "2.25s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "7",
+            "time_to_kill": "0.42"
+          },
+          "medium": {
+            "shells_to_kill": "11",
+            "time_to_kill": "0.70"
+          },
+          "heavy": {
+            "shells_to_kill": "15",
+            "time_to_kill": "0.98"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "10",
+            "time_to_kill": "0.63"
+          },
+          "medium": {
+            "shells_to_kill": "16",
+            "time_to_kill": "1.05"
+          },
+          "heavy": {
+            "shells_to_kill": "22",
+            "time_to_kill": "1.47"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "AKM",
+  "url": "https://www.thefinals.wiki/wiki/AKM",
+  "infobox": {
+    "Weapon Quote": "“Fully automatic assault rifle”",
+    "Build": "Medium",
+    "Type": "突击步枪 Assault Rifle",
+    "Price": "Free",
+    "Body": "20",
+    "Head": "30",
+    "Min Range": "30m",
+    "Max Range": "37.5m",
+    "Multiplier": "0.55",
+    "RPM": "600",
+    "Magazine": "32",
+    "Empty Reload": "2.35s",
+    "Tactical Reload": "2.35s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.40"
+          },
+          "medium": {
+            "shells_to_kill": "9",
+            "time_to_kill": "0.80"
+          },
+          "heavy": {
+            "shells_to_kill": "12",
+            "time_to_kill": "1.10"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "8",
+            "time_to_kill": "0.70"
+          },
+          "medium": {
+            "shells_to_kill": "13",
+            "time_to_kill": "1.20"
+          },
+          "heavy": {
+            "shells_to_kill": "18",
+            "time_to_kill": "1.70"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "CB-01 Repeater",
+  "url": "https://www.thefinals.wiki/wiki/CB-01_Repeater",
+  "infobox": {
+    "Weapon Quote": "“A powerful lever-action marksman's rifle with a speed loader for quick empty reloads.”",
+    "Build": "Medium",
+    "Type": "精确射击武器 Marksman Rifle",
+    "Price": "500",
+    "Body": "84",
+    "Head": "126 (1.5×)",
+    "Min Range": "40m",
+    "Max Range": "45m",
+    "Multiplier": "0.70",
+    "RPM": "73",
+    "Magazine": "8",
+    "Empty Reload": "5.05s",
+    "Tactical Reload": "Segmented"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.78"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.78"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.56"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.78"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.56"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "3.12"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "Cerberus_12GA",
+  "url": "https://www.thefinals.wiki/wiki/Cerberus_12GA",
+  "infobox": {
+    "Weapon Quote": "“A triple-barreled, break-action shotgun loaded with incendiary shells.”",
+    "Build": "Medium",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "9×11",
+    "Head": "9×11",
+    "Min Range": "10m",
+    "Max Range": "20m",
+    "Multiplier": "0.65",
+    "RPM": "100",
+    "Magazine": "3",
+    "Empty Reload": "2.45s",
+    "Tactical Reload": "Segmented"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.60"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.20"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "1.80"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.60"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.20"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "1.80"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "CL-40",
+  "url": "https://www.thefinals.wiki/wiki/CL-40",
+  "infobox": {
+    "Weapon Quote": "“Pump-action grenade launcher”",
+    "Build": "Medium",
+    "Type": "榴弹发射器 Grenade Launcher",
+    "Price": "500",
+    "Body": "100 (Direct) 90 (Splash)",
+    "Radius": "0.5m (Inner) 3m (Outer)",
+    "RPM": "75",
+    "Magazine": "5",
+    "Empty Reload": "4.65s",
+    "Tactical Reload": "Segmented"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Blast Type",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Direct",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.80"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.60"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.40"
+          }
+        },
+        {
+          "body_part": "Splash",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.80"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.60"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.40"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "双刀",
+  "url": "https://www.thefinals.wiki/wiki/Dual_Blades",
+  "infobox": {
+    "Weapon Quote": "“Close-range melee weapon that allows for quick successive strikes; can also be used in a defensive stance to block incoming bullets and deflect them back while the attacker is within line of sight”",
+    "Build": "Medium",
+    "Type": "近战 Melee",
+    "Price": "500",
+    "Body": "50×2 → 60×2 → 65",
+    "Alt-Fire": "Deflect"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "XP Breakdown"
+      ],
+      "sub_headers": [
+        "Source",
+        "XP Reward"
+      ],
+      "rows": []
+    }
+  }
+},{
+  "weapon_name": "FAMAS",
+  "url": "https://www.thefinals.wiki/wiki/FAMAS",
+  "infobox": {
+    "Weapon Quote": "“Burst-fire assault rifle”",
+    "Build": "Medium",
+    "Type": "突击步枪 Assault Rifle",
+    "Price": "500",
+    "Body": "23",
+    "Head": "34.5",
+    "Min Range": "35m",
+    "Max Range": "42.5m",
+    "Multiplier": "0.50",
+    "RPM": "220,1050",
+    "Magazine": "27",
+    "Empty Reload": "2.40s",
+    "Tactical Reload": "2.15s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.44"
+          },
+          "medium": {
+            "shells_to_kill": "8",
+            "time_to_kill": "0.82"
+          },
+          "heavy": {
+            "shells_to_kill": "11",
+            "time_to_kill": "1.20"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "7",
+            "time_to_kill": "0.76"
+          },
+          "medium": {
+            "shells_to_kill": "11",
+            "time_to_kill": "1.20"
+          },
+          "heavy": {
+            "shells_to_kill": "16",
+            "time_to_kill": "1.91"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "FCAR",
+  "url": "https://www.thefinals.wiki/wiki/FCAR",
+  "infobox": {
+    "Weapon Quote": "“Heavy tactical assault rifle”",
+    "Build": "Medium",
+    "Type": "突击步枪 Assault Rifle",
+    "Price": "500",
+    "Body": "22",
+    "Head": "33",
+    "Min Range": "35m",
+    "Max Range": "40m",
+    "Multiplier": "0.55",
+    "RPM": "540",
+    "Magazine": "25",
+    "Empty Reload": "2.10s",
+    "Tactical Reload": "2.10s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.44"
+          },
+          "medium": {
+            "shells_to_kill": "8",
+            "time_to_kill": "0.78"
+          },
+          "heavy": {
+            "shells_to_kill": "11",
+            "time_to_kill": "1.11"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "7",
+            "time_to_kill": "0.67"
+          },
+          "medium": {
+            "shells_to_kill": "12",
+            "time_to_kill": "1.22"
+          },
+          "heavy": {
+            "shells_to_kill": "16",
+            "time_to_kill": "1.67"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "M1887",
+  "url": "https://www.thefinals.wiki/wiki/Model_1887",
+  "infobox": {
+    "Weapon Quote": "“Lever-action shotgun firing pellets.”",
+    "Build": "Medium",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "12×9",
+    "Head": "12×9",
+    "Min Range": "20m",
+    "Max Range": "30m",
+    "Multiplier": "0.65",
+    "RPM": "77",
+    "Magazine": "7",
+    "Empty Reload": "4.3s",
+    "Tactical Reload": "Segmented"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.87"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.74"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.61"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.87"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.74"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.61"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "Pike-556",
+  "url": "https://www.thefinals.wiki/wiki/Pike-556",
+  "infobox": {
+    "Weapon Quote": "“A scoped mid-range marksman rifle with heavy recoil that deals high damage at range”",
+    "Build": "Medium",
+    "Type": "精确射击武器 Marksman Rifle",
+    "Price": "500",
+    "Body": "50",
+    "Head": "75",
+    "Min Range": "45m",
+    "Max Range": "50m",
+    "Multiplier": "0.75",
+    "RPM": "200",
+    "Magazine": "12",
+    "Empty Reload": "3.25s",
+    "Tactical Reload": "2.10s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.30"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.90"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.20"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.60"
+          },
+          "medium": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.20"
+          },
+          "heavy": {
+            "shells_to_kill": "7",
+            "time_to_kill": "1.80"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "R.357",
+  "url": "https://www.thefinals.wiki/wiki/R.357",
+  "infobox": {
+    "Weapon Quote": "“High-power revolver”",
+    "Build": "Medium",
+    "Type": "手枪 Handgun",
+    "Price": "Free",
+    "Body": "74",
+    "Head": "148",
+    "Min Range": "27.5m",
+    "Max Range": "44m",
+    "Multiplier": "0.4",
+    "RPM": "140",
+    "Magazine": "6",
+    "Empty Reload": "2.50s",
+    "Tactical Reload": "2.20s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.43"
+          },
+          "medium": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.43"
+          },
+          "heavy": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.86"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.86"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "1.29"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.71"
+          }
+        }
+      ]
+    }
+  }
+},
+{
+  "weapon_name": "防暴盾",
+  "url": "https://www.thefinals.wiki/wiki/Riot_Shield",
+  "infobox": {
+    "Weapon Quote": "“Carried shield; can be held close to the body for protection, raised to block incoming projectiles, or used as a close-range melee weapon”",
+    "Build": "Medium",
+    "Type": "近战 Melee",
+    "Price": "500",
+    "Body": "90",
+    "Alt-Fire": "100% (Blocking)"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)",
+        "Hits to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "-"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "-"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "-"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": ".50 Akimbo",
+  "url": "https://www.thefinals.wiki/wiki/.50_Akimbo",
+  "infobox": {
+    "Weapon Quote": "“Dual, high-caliber handguns that deal high damage while sacrificing precision”",
+    "Build": "Heavy",
+    "Type": "手枪 Handgun",
+    "Price": "500",
+    "Body": "44",
+    "Head": "88",
+    "Min Range": "35m",
+    "Max Range": "42m",
+    "Multiplier": "0.50",
+    "RPM": "230",
+    "Magazine": "14",
+    "Empty Reload": "3.00s",
+    "Tactical Reload": "2.20s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.26"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.52"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.78"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.78"
+          },
+          "medium": {
+            "shells_to_kill": "6",
+            "time_to_kill": "1.30"
+          },
+          "heavy": {
+            "shells_to_kill": "8",
+            "time_to_kill": "1.83"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "火焰喷射器",
+  "url": "https://www.thefinals.wiki/wiki/Flamethrower",
+  "infobox": {
+    "Weapon Quote": "“Emits a stream of burning fuel that burns and damages contestants”",
+    "Build": "Heavy",
+    "Type": "杂项 Miscellaneous",
+    "Price": "500",
+    "Body": "30",
+    "RPM": "170",
+    "Magazine": "30",
+    "Empty Reload": "3.55s",
+    "Tactical Reload": "3.55s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Blast Type",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Ammo to kill",
+        "Time to kill (s)",
+        "Ammo to kill",
+        "Time to kill (s)",
+        "Ammo to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Splash",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.41"
+          },
+          "medium": {
+            "shells_to_kill": "9",
+            "time_to_kill": "2.82"
+          },
+          "heavy": {
+            "shells_to_kill": "12",
+            "time_to_kill": "3.88"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "KS-23",
+  "url": "https://www.thefinals.wiki/wiki/KS-23",
+  "infobox": {
+    "Weapon Quote": "“Pump-action shotgun that fires slugs that deal high arena damage”",
+    "Build": "Heavy",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "100",
+    "Head": "100",
+    "Min Range": "18m",
+    "Max Range": "23m",
+    "Multiplier": "0.70",
+    "RPM": "75",
+    "Magazine": "6",
+    "Empty Reload": "4.36s",
+    "Tactical Reload": "Segmented"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.77"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.54"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.31"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.77"
+          },
+          "medium": {
+            "shells_to_kill": "3",
+            "time_to_kill": "1.54"
+          },
+          "heavy": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.31"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "刘易斯机枪",
+  "url": "https://www.thefinals.wiki/wiki/Lewis_Gun",
+  "infobox": {
+    "Weapon Quote": "“Pan magazine-fed light machine gun.”",
+    "Build": "Heavy",
+    "Type": "轻机枪 LMG",
+    "Price": "500",
+    "Body": "22",
+    "Head": "33",
+    "Min Range": "35m",
+    "Max Range": "40m",
+    "Multiplier": "0.67",
+    "RPM": "500",
+    "Magazine": "47",
+    "Empty Reload": "3.55s",
+    "Tactical Reload": "3.25s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.48"
+          },
+          "medium": {
+            "shells_to_kill": "8",
+            "time_to_kill": "0.84"
+          },
+          "heavy": {
+            "shells_to_kill": "11",
+            "time_to_kill": "1.20"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "7",
+            "time_to_kill": "0.72"
+          },
+          "medium": {
+            "shells_to_kill": "12",
+            "time_to_kill": "1.32"
+          },
+          "heavy": {
+            "shells_to_kill": "16",
+            "time_to_kill": "1.80"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "M60",
+  "url": "https://www.thefinals.wiki/wiki/M60",
+  "infobox": {
+    "Weapon Quote": "“Fully automatic light machine gun”",
+    "Build": "Heavy",
+    "Type": "轻机枪 LMG",
+    "Price": "Free",
+    "Body": "20",
+    "Head": "30",
+    "Min Range": "25m",
+    "Max Range": "35m",
+    "Multiplier": "0.50",
+    "RPM": "580",
+    "Magazine": "70",
+    "Empty Reload": "3.55s",
+    "Tactical Reload": "3.55s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.41"
+          },
+          "medium": {
+            "shells_to_kill": "9",
+            "time_to_kill": "0.83"
+          },
+          "heavy": {
+            "shells_to_kill": "12",
+            "time_to_kill": "1.14"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "8",
+            "time_to_kill": "0.72"
+          },
+          "medium": {
+            "shells_to_kill": "13",
+            "time_to_kill": "1.24"
+          },
+          "heavy": {
+            "shells_to_kill": "18",
+            "time_to_kill": "1.76"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "M134 Minigun",
+  "url": "https://www.thefinals.wiki/wiki/M134_Minigun",
+  "infobox": {
+    "Weapon Quote": "“A heavily modified minigun with relentless firepower, perfect for sustained suppression.”",
+    "Build": "Heavy",
+    "Type": "重机枪 HMG ",
+    "Price": "500",
+    "Body": "11",
+    "Head": "14.63 (1.33×)",
+    "Min Range": "30m",
+    "Max Range": "50m",
+    "Multiplier": "0.40",
+    "RPM": "1500",
+    "Magazine": "250",
+    "Empty Reload": "5.25s",
+    "Tactical Reload": "5.00s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)",
+        "Bullets to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "11",
+            "time_to_kill": "0.40"
+          },
+          "medium": {
+            "shells_to_kill": "18",
+            "time_to_kill": "0.68"
+          },
+          "heavy": {
+            "shells_to_kill": "24",
+            "time_to_kill": "0.92"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "14",
+            "time_to_kill": "0.52"
+          },
+          "medium": {
+            "shells_to_kill": "23",
+            "time_to_kill": "0.88"
+          },
+          "heavy": {
+            "shells_to_kill": "32",
+            "time_to_kill": "1.24"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "MGL32",
+  "url": "https://www.thefinals.wiki/wiki/MGL32",
+  "infobox": {
+    "Weapon Quote": "“Revolving-action grenade launcher”",
+    "Build": "Heavy",
+    "Type": "榴弹发射器 Grenade Launcher",
+    "Price": "500",
+    "Body": "83",
+    "Radius": "4m",
+    "RPM": "90",
+    "Magazine": "6",
+    "Empty Reload": "3.10s",
+    "Tactical Reload": "2.85s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Blast Type",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Splash",
+          "light": {
+            "shells_to_kill": "2",
+            "time_to_kill": "0.67"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "2.00"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "2.67"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "SA1216",
+  "url": "https://www.thefinals.wiki/wiki/SA1216",
+  "infobox": {
+    "Weapon Quote": "“Rapid-fire, semi-automatic shotgun with a quad-tube magazine”",
+    "Build": "Heavy",
+    "Type": "霰弹 Shotgun",
+    "Price": "500",
+    "Body": "6×12",
+    "Head": "6×12",
+    "Min Range": "12.5m",
+    "Max Range": "20m",
+    "Multiplier": "0.62",
+    "RPM": "190",
+    "Magazine": "4×4",
+    "Empty Reload": "3.25s",
+    "Tactical Reload": "2.35s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)",
+        "Shells to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.63"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.95"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.75"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "3",
+            "time_to_kill": "0.63"
+          },
+          "medium": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.95"
+          },
+          "heavy": {
+            "shells_to_kill": "5",
+            "time_to_kill": "1.75"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "ShAK-50",
+  "url": "https://www.thefinals.wiki/wiki/ShAK-50",
+  "infobox": {
+    "Weapon Quote": "“A high-caliber automatic rifle that fires multiple bullets per round.”",
+    "Build": "Heavy",
+    "Type": "突击步枪 Assault Rifle",
+    "Price": "500",
+    "Body": "15×2",
+    "Head": "22.5×2",
+    "Min Range": "15m",
+    "Max Range": "25m",
+    "Multiplier": "0.65",
+    "RPM": "420",
+    "Magazine": "20",
+    "Empty Reload": "3.20s",
+    "Tactical Reload": "2.40s"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Body Part",
+        "Light (150 HP)",
+        "Medium (250 HP)",
+        "Heavy (350 HP)"
+      ],
+      "sub_headers": [
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)",
+        "Shots to kill",
+        "Time to kill (s)"
+      ],
+      "rows": [
+        {
+          "body_part": "Head",
+          "light": {
+            "shells_to_kill": "4",
+            "time_to_kill": "0.43"
+          },
+          "medium": {
+            "shells_to_kill": "6",
+            "time_to_kill": "0.71"
+          },
+          "heavy": {
+            "shells_to_kill": "8",
+            "time_to_kill": "1.00"
+          }
+        },
+        {
+          "body_part": "Body",
+          "light": {
+            "shells_to_kill": "5",
+            "time_to_kill": "0.57"
+          },
+          "medium": {
+            "shells_to_kill": "9",
+            "time_to_kill": "1.14"
+          },
+          "heavy": {
+            "shells_to_kill": "12",
+            "time_to_kill": "1.57"
+          }
+        }
+      ]
+    }
+  }
+},{
+  "weapon_name": "大锤",
+  "url": "https://www.thefinals.wiki/wiki/Sledgehammer",
+  "infobox": {
+    "Weapon Quote": "“A melee weapon and tool that destroys the arena itself; can also perform a secondary overhead attack”",
+    "Build": "Heavy",
+    "Type": "近战 Melee",
+    "Price": "Free",
+    "Body": "100",
+    "Alt-Fire": "175"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Build",
+        "Attack Combo",
+        "Damage"
+      ],
+      "sub_headers": [
+        "Light",
+        "Alt Fire",
+        "175"
+      ],
+      "rows": []
+    }
+  }
+},{
+  "weapon_name": "长矛",
+  "url": "https://www.thefinals.wiki/wiki/Spear",
+  "infobox": {
+    "Weapon Quote": "“A melee weapon with long-range stabs; can also be spun to cover a wider area”",
+    "Build": "Heavy",
+    "Type": "近战 Melee",
+    "Price": "500",
+    "Body": "65 → 80 → 90",
+    "Alt-Fire": "105×3"
+  },
+  "parsed_overflow": {
+    "damage_data": {
+      "headers": [
+        "Build",
+        "Attack Combo",
+        "Damage"
+      ],
+      "sub_headers": [
+        "Light",
+        "Winch Claw→ Primary Fire 1 → Primary Fire 2",
+        "5+65+80=150"
+      ],
+      "rows": []
+    }
+  }
+}
+]
