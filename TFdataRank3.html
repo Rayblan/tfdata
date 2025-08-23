@@ -251,6 +251,29 @@
             font-weight: bold;
         }
         
+        .melee-damage {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff9900;
+            padding: 15px 0;
+        }
+
+        .melee-damage-info {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .ranking-table .melee-weapon {
+            opacity: 0.6;
+            background: rgba(255, 153, 0, 0.1);
+        }
+
+        .ranking-table .melee-weapon td {
+            font-style: italic;
+        }
+
         .ranking-section {
             margin: 40px 0;
             background: rgba(0, 0, 0, 0.5);
@@ -522,22 +545,25 @@
                         <div class="weapon-type">{{ weapon.infobox.Type }} - {{ weapon.infobox.Build }}</div>
                     </div>
                     <div class="card-body">
-                        <div class="weapon-stats">
+                        <div v-if="getMeleeDamage(weapon)" class="melee-damage">
+                            {{ getMeleeDamage(weapon) }}
+                        </div>
+                        <div v-else class="weapon-stats">
                             <div class="stat-item">
                                 <span class="stat-label">身体伤害</span>
                                 <span class="stat-value">{{ weapon.infobox.Body }}</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-label">头部伤害</span>
-                                <span class="stat-value">{{ weapon.infobox.Head }}</span>
+                                <span class="stat-value">{{ weapon.infobox.Head || 'N/A' }}</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-label">射速 (RPM)</span>
-                                <span class="stat-value">{{ weapon.infobox.RPM }}</span>
+                                <span class="stat-value">{{ weapon.infobox.RPM || 'N/A' }}</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-label">弹匣容量</span>
-                                <span class="stat-value">{{ weapon.infobox.Magazine }}</span>
+                                <span class="stat-value">{{ weapon.infobox.Magazine || 'N/A' }}</span>
                             </div>
                         </div>
                     </div>
@@ -580,12 +606,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(weapon, index) in rankedWeapons" :key="weapon.weapon_name">
-                            <td class="rank-number" :class="'rank-' + (index + 1)">{{ index + 1 }}</td>
+                        <tr v-for="(weapon, index) in rankedWeapons" :key="weapon.weapon_name" 
+                            :class="{'melee-weapon': isMeleeWeapon(weapon)}">
+                            <td class="rank-number" :class="'rank-' + (index + 1)">
+                                {{ isMeleeWeapon(weapon) ? '-' : index + 1 }}
+                            </td>
                             <td>{{ weapon.weapon_name }}</td>
                             <td>{{ weapon.infobox.Type }}</td>
-                            <td class="ttk-value">{{ getBodyTTK(weapon) }}秒</td>
-                            <td class="ttk-value">{{ getHeadTTK(weapon) }}秒</td>
+                            <td class="ttk-value">
+                                {{ isMeleeWeapon(weapon) ? '近战武器' : getBodyTTK(weapon) + '秒' }}
+                            </td>
+                            <td class="ttk-value">
+                                {{ isMeleeWeapon(weapon) ? '近战武器' : getHeadTTK(weapon) + '秒' }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -3125,18 +3158,52 @@
                     return '';
                 };
                 
-                // 按击杀时间排序的武器列表
-                const rankedWeapons = computed(() => {
-                    return [...weapons.value].sort((a, b) => {
-                        const aTTK = getBodyTTK(a, activeRanking.value);
-                        const bTTK = getBodyTTK(b, activeRanking.value);
-                        
-                        if (typeof aTTK !== 'number') return 1;
-                        if (typeof bTTK !== 'number') return -1;
-                        
-                        return aTTK - bTTK;
-                    });
-                });
+                // 按击杀时间排序的武器列表（排除近战武器）
+        const rankedWeapons = computed(() => {
+            // 过滤出非近战武器
+            const nonMeleeWeapons = weapons.value.filter(weapon => 
+                weapon.infobox.Type !== "近战 Melee" && 
+                weapon.infobox.Type !== "Melee"
+            );
+            
+            // 过滤出近战武器
+            const meleeWeapons = weapons.value.filter(weapon => 
+                weapon.infobox.Type === "近战 Melee" || 
+                weapon.infobox.Type === "Melee"
+            );
+            
+            // 对非近战武器进行排序
+            const sortedNonMelee = [...nonMeleeWeapons].sort((a, b) => {
+                const aTTK = getBodyTTK(a, activeRanking.value);
+                const bTTK = getBodyTTK(b, activeRanking.value);
+                
+                if (typeof aTTK !== 'number') return 1;
+                if (typeof bTTK !== 'number') return -1;
+                
+                return aTTK - bTTK;
+            });
+            
+            // 将近战武器放在最后
+            return [...sortedNonMelee, ...meleeWeapons];
+        });
+        
+        // 检查是否为近战武器
+        const isMeleeWeapon = (weapon) => {
+            return weapon.infobox.Type === "近战 Melee" || 
+                   weapon.infobox.Type === "Melee" ||
+                   weapon.infobox.Type.includes("近战");
+        };
+        
+        // 获取近战武器伤害显示
+        const getMeleeDamage = (weapon) => {
+            if (!isMeleeWeapon(weapon)) return null;
+            
+            let damageText = `左键: ${weapon.infobox.Body}`;
+            if (weapon.infobox["Alt-Fire"]) {
+                damageText += ` | 右键: ${weapon.infobox["Alt-Fire"]}`;
+            }
+            return damageText;
+        };
                 
                 onMounted(() => {
                     initWeaponData();
@@ -3160,7 +3227,9 @@
                     getBodyTTK,
                     getHeadTTK,
                     getBestTTKClass,
-                    getBestValueClass
+                    getBestValueClass,
+                    isMeleeWeapon,
+                    getMeleeDamage
                 };
             }
         }).mount('#app');
