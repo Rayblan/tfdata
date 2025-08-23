@@ -1,6 +1,7 @@
 [
   {
     "weapon_name": "93R",
+    "aliases": [],
     "url": "https://www.thefinals.wiki/wiki/93R",
     "infobox": {
       "Weapon Quote": "“Burst-fire machine pistol”",
@@ -70,6 +71,7 @@
   },
   {
     "weapon_name": "ARN-220",
+    "aliases": [],
     "url": "https://www.thefinals.wiki/wiki/ARN-220",
     "infobox": {
       "Weapon Quote": "“A tactical assault rifle with coupled mags for quick swaps in the heat of combat.”",
@@ -139,6 +141,7 @@
   },
   {
   "weapon_name": "匕首",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/Dagger",
   "infobox": {
     "Weapon Quote": "“Close-range melee weapon; can also perform a secondary backstabbing attack”",
@@ -216,6 +219,7 @@
 },
 {
   "weapon_name": "LH1",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/LH1",
   "infobox": {
     "Weapon Quote": "“Semi-automatic battle rifle.”",
@@ -285,6 +289,7 @@
 },
 {
   "weapon_name": "M11",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/M11",
   "infobox": {
     "Weapon Quote": "“Fast-firing, fully automatic machine pistol”",
@@ -354,11 +359,12 @@
 },
 {
   "weapon_name": "M26 Matter",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/M26_Matter",
   "infobox": {
     "Weapon Quote": "“A light and compact pump-action shotgun that uses box magazines.”",
     "Build": "Light",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "11×11",
     "Head": "11×11",
@@ -423,6 +429,7 @@
 },
 {
   "weapon_name": "反曲弓",
+  "aliases": ["弓", "bow"],
   "url": "https://www.thefinals.wiki/wiki/Recurve_Bow",
   "infobox": {
     "Weapon Quote": "“Shoots arrows in a curved arc; the arrows' effective range and damage will increase the further back the bowstring is drawn”",
@@ -520,11 +527,12 @@
 },
 {
   "weapon_name": "SH1900",
+  "aliases": ["短喷","双管"],
   "url": "https://www.thefinals.wiki/wiki/SH1900",
   "infobox": {
     "Weapon Quote": "“Double-barrel shotgun with a wide spread”",
     "Build": "Light",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "13×15",
     "Head": "13×15",
@@ -589,6 +597,7 @@
 },
 {
   "weapon_name": "SR-84",
+  "aliases": ["狙","矮子狙"],
   "url": "https://www.thefinals.wiki/wiki/SR-84",
   "infobox": {
     "Weapon Quote": "“Bolt-action sniper rifle”",
@@ -658,6 +667,7 @@
 },
 {
   "weapon_name": "长剑",
+  "aliases": ["剑"],
   "url": "https://www.thefinals.wiki/wiki/Sword",
   "infobox": {
     "Weapon Quote": "“High-damage melee weapon; can also perform a secondary lunging attack”",
@@ -720,6 +730,7 @@
 },
 {
   "weapon_name": "飞刀",
+  "aliases": ["飞刀", "Throwing Knives"],
   "url": "https://www.thefinals.wiki/wiki/Throwing_Knives",
   "infobox": {
     "Weapon Quote": "“A set of silent projectiles that can be thrown in short bursts; can also be thrown in pairs”",
@@ -816,6 +827,7 @@
 },
 {
   "weapon_name": "V9S",
+  "aliases": ["手枪"],
   "url": "https://www.thefinals.wiki/wiki/V9S",
   "infobox": {
     "Weapon Quote": "“Semi-automatic pistol”",
@@ -885,6 +897,7 @@
 },
 {
   "weapon_name": "XP-54",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/XP-54",
   "infobox": {
     "Weapon Quote": "“Tactical submachine gun”",
@@ -954,6 +967,7 @@
 },
 {
   "weapon_name": "AKM",
+  "aliases": ["AK"],
   "url": "https://www.thefinals.wiki/wiki/AKM",
   "infobox": {
     "Weapon Quote": "“Fully automatic assault rifle”",
@@ -1023,6 +1037,7 @@
 },
 {
   "weapon_name": "CB-01 Repeater",
+  "aliases": ["杠杆"],
   "url": "https://www.thefinals.wiki/wiki/CB-01_Repeater",
   "infobox": {
     "Weapon Quote": "“A powerful lever-action marksman's rifle with a speed loader for quick empty reloads.”",
@@ -1091,12 +1106,13 @@
   }
 },
 {
-  "weapon_name": "Cerberus_12GA",
+  "weapon_name": "Cerberus 12GA",
+  "aliases": ["龙息","12GA"],
   "url": "https://www.thefinals.wiki/wiki/Cerberus_12GA",
   "infobox": {
     "Weapon Quote": "“A triple-barreled, break-action shotgun loaded with incendiary shells.”",
     "Build": "Medium",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "9×11",
     "Head": "9×11",
@@ -1161,6 +1177,7 @@
 },
 {
   "weapon_name": "CL-40",
+  "aliases": ["榴"],
   "url": "https://www.thefinals.wiki/wiki/CL-40",
   "infobox": {
     "Weapon Quote": "“Pump-action grenade launcher”",
@@ -1227,6 +1244,7 @@
 },
 {
   "weapon_name": "双刀",
+  "aliases": ["双刃"],
   "url": "https://www.thefinals.wiki/wiki/Dual_Blades",
   "infobox": {
     "Weapon Quote": "“Close-range melee weapon that allows for quick successive strikes; can also be used in a defensive stance to block incoming bullets and deflect them back while the attacker is within line of sight”",
@@ -1250,6 +1268,7 @@
   }
 },{
   "weapon_name": "FAMAS",
+  "aliases": ["法玛斯"],
   "url": "https://www.thefinals.wiki/wiki/FAMAS",
   "infobox": {
     "Weapon Quote": "“Burst-fire assault rifle”",
@@ -1319,6 +1338,7 @@
 },
 {
   "weapon_name": "FCAR",
+  "aliases": ["SCAR"],
   "url": "https://www.thefinals.wiki/wiki/FCAR",
   "infobox": {
     "Weapon Quote": "“Heavy tactical assault rifle”",
@@ -1388,11 +1408,12 @@
 },
 {
   "weapon_name": "M1887",
+  "aliases": ["中喷"],
   "url": "https://www.thefinals.wiki/wiki/Model_1887",
   "infobox": {
     "Weapon Quote": "“Lever-action shotgun firing pellets.”",
     "Build": "Medium",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "12×9",
     "Head": "12×9",
@@ -1457,6 +1478,7 @@
 },
 {
   "weapon_name": "Pike-556",
+  "aliases": ["连狙","狙"],
   "url": "https://www.thefinals.wiki/wiki/Pike-556",
   "infobox": {
     "Weapon Quote": "“A scoped mid-range marksman rifle with heavy recoil that deals high damage at range”",
@@ -1526,6 +1548,7 @@
 },
 {
   "weapon_name": "R.357",
+  "aliases": ["左轮"],
   "url": "https://www.thefinals.wiki/wiki/R.357",
   "infobox": {
     "Weapon Quote": "“High-power revolver”",
@@ -1595,6 +1618,7 @@
 },
 {
   "weapon_name": "防暴盾",
+  "aliases": ["盾"],
   "url": "https://www.thefinals.wiki/wiki/Riot_Shield",
   "infobox": {
     "Weapon Quote": "“Carried shield; can be held close to the body for protection, raised to block incoming projectiles, or used as a close-range melee weapon”",
@@ -1641,6 +1665,7 @@
   }
 },{
   "weapon_name": ".50 Akimbo",
+  "aliases": ["双枪","沙鹰"],
   "url": "https://www.thefinals.wiki/wiki/.50_Akimbo",
   "infobox": {
     "Weapon Quote": "“Dual, high-caliber handguns that deal high damage while sacrificing precision”",
@@ -1709,6 +1734,7 @@
   }
 },{
   "weapon_name": "火焰喷射器",
+  "aliases": ["喷火器"],
   "url": "https://www.thefinals.wiki/wiki/Flamethrower",
   "infobox": {
     "Weapon Quote": "“Emits a stream of burning fuel that burns and damages contestants”",
@@ -1758,11 +1784,12 @@
   }
 },{
   "weapon_name": "KS-23",
+  "aliases": ["独头"],
   "url": "https://www.thefinals.wiki/wiki/KS-23",
   "infobox": {
     "Weapon Quote": "“Pump-action shotgun that fires slugs that deal high arena damage”",
     "Build": "Heavy",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "100",
     "Head": "100",
@@ -1826,6 +1853,7 @@
   }
 },{
   "weapon_name": "刘易斯机枪",
+  "aliases": ["刘易斯", "Lewis Gun"],
   "url": "https://www.thefinals.wiki/wiki/Lewis_Gun",
   "infobox": {
     "Weapon Quote": "“Pan magazine-fed light machine gun.”",
@@ -1894,6 +1922,7 @@
   }
 },{
   "weapon_name": "M60",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/M60",
   "infobox": {
     "Weapon Quote": "“Fully automatic light machine gun”",
@@ -1962,6 +1991,7 @@
   }
 },{
   "weapon_name": "M134 Minigun",
+  "aliases": ["加特林"],
   "url": "https://www.thefinals.wiki/wiki/M134_Minigun",
   "infobox": {
     "Weapon Quote": "“A heavily modified minigun with relentless firepower, perfect for sustained suppression.”",
@@ -2030,6 +2060,7 @@
   }
 },{
   "weapon_name": "MGL32",
+  "aliases": ["重榴","榴弹"],
   "url": "https://www.thefinals.wiki/wiki/MGL32",
   "infobox": {
     "Weapon Quote": "“Revolving-action grenade launcher”",
@@ -2080,11 +2111,12 @@
   }
 },{
   "weapon_name": "SA1216",
+  "aliases": ["连喷"],
   "url": "https://www.thefinals.wiki/wiki/SA1216",
   "infobox": {
     "Weapon Quote": "“Rapid-fire, semi-automatic shotgun with a quad-tube magazine”",
     "Build": "Heavy",
-    "Type": "霰弹 Shotgun",
+    "Type": "霰弹枪 Shotgun",
     "Price": "500",
     "Body": "6×12",
     "Head": "6×12",
@@ -2148,6 +2180,7 @@
   }
 },{
   "weapon_name": "ShAK-50",
+  "aliases": [],
   "url": "https://www.thefinals.wiki/wiki/ShAK-50",
   "infobox": {
     "Weapon Quote": "“A high-caliber automatic rifle that fires multiple bullets per round.”",
@@ -2216,6 +2249,7 @@
   }
 },{
   "weapon_name": "大锤",
+  "aliases": ["Sledgehammer","锤子"],
   "url": "https://www.thefinals.wiki/wiki/Sledgehammer",
   "infobox": {
     "Weapon Quote": "“A melee weapon and tool that destroys the arena itself; can also perform a secondary overhead attack”",
@@ -2242,6 +2276,7 @@
   }
 },{
   "weapon_name": "长矛",
+  "aliases": ["Spear","矛"],
   "url": "https://www.thefinals.wiki/wiki/Spear",
   "infobox": {
     "Weapon Quote": "“A melee weapon with long-range stabs; can also be spun to cover a wider area”",

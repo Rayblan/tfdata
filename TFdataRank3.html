@@ -780,7 +780,7 @@
                 const showCompare = ref(false);
                 
                 const categories = ['Heavy', 'Light', 'Medium'];
-                
+
                 // 初始化武器数据
                 const initWeaponData = async () => {
                   try {
@@ -793,11 +793,28 @@
                 
                 // 过滤武器列表
                 const filteredWeapons = computed(() => {
-                    return weapons.value.filter(weapon => {
-                        const matchesCategory = weapon.infobox.Build === activeCategory.value;
-                        const matchesSearch = weapon.weapon_name.toLowerCase().includes(searchQuery.value.toLowerCase());
-                        return matchesCategory && matchesSearch;
-                    });
+                  const query = searchQuery.value.toLowerCase().trim();
+    
+                  return weapons.value.filter(weapon => {
+                    const matchesCategory = weapon.infobox.Build === activeCategory.value;
+        
+                    if (!query) return matchesCategory;
+        
+                    // 检查武器名称
+                    const nameMatch = weapon.weapon_name.toLowerCase().includes(query);
+        
+                    // 检查别名数组
+                    const aliasMatch = weapon.aliases && 
+                      Array.isArray(weapon.aliases) && 
+                      weapon.aliases.some(alias => 
+                        alias.toLowerCase().includes(query)
+                      );
+        
+                    // 检查显示名称中的其他可能匹配（如型号等）
+                    const typeMatch = weapon.infobox.Type.toLowerCase().includes(query);
+        
+                    return matchesCategory && (nameMatch || aliasMatch || typeMatch);
+                  });
                 });
                 
                 // 检查武器是否被选中
