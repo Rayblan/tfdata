@@ -779,7 +779,7 @@
                 const selectedWeapons = ref([]);
                 const showCompare = ref(false);
                 
-                const categories = ['Heavy', 'Light', 'Medium'];
+                const categories = ['All', 'Heavy', 'Light', 'Medium'];
 
                 // 初始化武器数据
                 const initWeaponData = async () => {
@@ -796,7 +796,7 @@
                   const query = searchQuery.value.toLowerCase().trim();
     
                   return weapons.value.filter(weapon => {
-                    const matchesCategory = weapon.infobox.Build === activeCategory.value;
+                    const matchesCategory = activeCategory.value === 'All' || weapon.infobox.Build === activeCategory.value;
         
                     if (!query) return matchesCategory;
         
