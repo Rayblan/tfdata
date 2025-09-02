@@ -294,11 +294,11 @@
                     
                     <div class="card-body">
                         <div class="gadget-stats">
-                            <div class="stat-item">
+                            <div class="stat-item" v-if="gadget.Price">
                                 <span class="stat-label">价格:</span>
                                 <span class="stat-value">{{ gadget.Price }}</span>
                             </div>
-                            <div class="stat-item">
+                            <div class="stat-item" v-if="gadget.Cooldown">
                                 <span class="stat-label">冷却:</span>
                                 <span class="stat-value">{{ gadget.Cooldown }}</span>
                             </div>
@@ -318,6 +318,10 @@
                                 <span class="stat-label">伤害半径:</span>
                                 <span class="stat-value">{{ gadget['Damage Radius'] }}</span>
                             </div>
+                            <div class="stat-item" v-if="gadget['Priming Time']">
+                                <span class="stat-label">准备时间:</span>
+                                <span class="stat-value">{{ gadget['Priming Time'] }}</span>
+                            </div>
                             <div class="stat-item" v-if="gadget['Max Deployed']">
                                 <span class="stat-label">最大部署:</span>
                                 <span class="stat-value">{{ gadget['Max Deployed'] }}</span>
@@ -325,6 +329,26 @@
                             <div class="stat-item" v-if="gadget.Health">
                                 <span class="stat-label">生命值:</span>
                                 <span class="stat-value">{{ gadget.Health }}</span>
+                            </div>
+                            <div class="stat-item" v-if="gadget['Environment Dmg']">
+                                <span class="stat-label">环境伤害:</span>
+                                <span class="stat-value">{{ gadget['Environment Dmg'] }}</span>
+                            </div>
+                            <div class="stat-item" v-if="gadget['Max Range']">
+                                <span class="stat-label">最大范围:</span>
+                                <span class="stat-value">{{ gadget['Max Range'] }}</span>
+                            </div>
+                            <div class="stat-item" v-if="gadget.Radius">
+                                <span class="stat-label">半径:</span>
+                                <span class="stat-value">{{ gadget.Radius }}</span>
+                            </div>
+                            <div class="stat-item" v-if="gadget.rpm">
+                                <span class="stat-label">射速:</span>
+                                <span class="stat-value">{{ gadget.rpm }}</span>
+                            </div>
+                            <div class="stat-item" v-if="gadget.Healing">
+                                <span class="stat-label">治疗量:</span>
+                                <span class="stat-value">{{ gadget.Healing }}</span>
                             </div>
                         </div>
                     </div>
@@ -340,7 +364,6 @@
     <script>
         const { createApp, ref, computed } = Vue;
         
-        // 道具数据
         const gadgetsData = {
             "Breach_Charge": {
                 "game": "便携炸药 Breach_Charge",
