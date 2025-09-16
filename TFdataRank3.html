@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="vue.global.js"></script>
+  <link rel="stylesheet" href="all.min.css">
   <link rel="stylesheet" href="tfdatarank3.css">
 
 </head>
@@ -563,9 +563,14 @@
         });
 
         function parseDamage(value) {
-            if (typeof value === 'string' && value.includes('×')) {
-                const [perPellet, pelletCount] = value.split('×').map(Number);
-                return perPellet * pelletCount;
+            if (typeof value === 'string') {
+                // 去掉括号及其内容
+                value = value.replace(/\(.*?\)/g, '').trim();
+                // 处理散弹格式
+                if (value.includes('×')) {
+                    const [perPellet, pelletCount] = value.split('×').map(Number);
+                    return perPellet * pelletCount;
+                }
             }
             return Number(value);
         }
