@@ -272,6 +272,16 @@ h1 {
     padding: 25px;
 }
 
+.ranking-section.two-columns {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 32px;
+}
+
+.ranking-column {
+    flex: 1 1 0;
+}
+
 .ranking-tabs {
     display: flex;
     justify-content: center;
