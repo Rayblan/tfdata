@@ -11,7 +11,7 @@
     "Min Range": "32m",
     "Max Range": "40m",
     "Multiplier": "0.4",
-    "RPM": "210",
+    "RPM": "210,950",
     "Magazine": "24",
     "Empty Reload": "1.75s",
     "Tactical Reload": "1.45s"
