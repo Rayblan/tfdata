@@ -15,7 +15,7 @@
   <div id="app" class="container">
     <header>
       <div class="title-container">
-        <h1>THE FINALS 武器数据库</h1>
+        <h1>终极角逐 武器数据库</h1>
         <a href="https://space.bilibili.com/85550309" class="author-link" target="_blank">
           <i class="fas fa-pencil-alt"></i> B站: 哥布林纯水，欢迎关注
         </a>
@@ -235,6 +235,49 @@
             <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-tactical'"
               :class="getBestValueClass(selectedWeapons, 'Tactical Reload', weapon, 'min')">
               {{ weapon.infobox['Tactical Reload'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>轻型头部TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-light-head'"
+              :class="getBestTTKClass(selectedWeapons, 'light', 'head', weapon)">
+              {{ getHeadTTK(weapon, 'light') }}秒
+            </td>
+          </tr>
+          <tr>
+            <td>轻型身体TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-light-body'"
+              :class="getBestTTKClass(selectedWeapons, 'light', 'body', weapon)">
+              {{ getBodyTTK(weapon, 'light') }}秒
+            </td>
+          </tr>
+          <tr>
+            <td>中型头部TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-medium-head'"
+              :class="getBestTTKClass(selectedWeapons, 'medium', 'head', weapon)">
+              {{ getHeadTTK(weapon, 'medium') }}秒
+            </td>
+          </tr>
+          <tr>
+            <td>中型身体TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-medium-body'"
+              :class="getBestTTKClass(selectedWeapons, 'medium', 'body', weapon)">
+              {{ getBodyTTK(weapon, 'medium') }}秒
+            </td>
+          </tr>
+          <tr>
+
+            <td>重型头部TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-heavy-head'"
+              :class="getBestTTKClass(selectedWeapons, 'heavy', 'head', weapon)">
+              {{ getHeadTTK(weapon, 'heavy') }}秒
+            </td>
+          </tr>
+          <tr>
+            <td>重型身体TTK</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-heavy-body'"
+              :class="getBestTTKClass(selectedWeapons, 'heavy', 'body', weapon)">
+              {{ getBodyTTK(weapon, 'heavy') }}秒
             </td>
           </tr>
           <tr>
