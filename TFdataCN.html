@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="vue.global.js"></script>
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="tfdatarank3.css">
+
+</head>
+
+<body>
+  <div id="app" class="container">
+    <header>
+      <div class="title-container">
+        <h1>THE FINALS 武器数据库</h1>
+        <a href="https://space.bilibili.com/85550309" class="author-link" target="_blank">
+          <i class="fas fa-pencil-alt"></i> B站: 哥布林纯水，欢迎关注
+        </a>
+      </div>
+      <p class="subtitle">浏览和比较游戏中的所有武器数据</p>
+
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input class="search-input" v-model="searchQuery" placeholder="搜索武器名称..." />
+      </div>
+    </header>
+
+    <div class="main-tabs">
+      <div class="main-tab" :class="{ active: activeView === 'list' }" @click="activeView = 'list'">
+        武器列表
+      </div>
+      <div class="main-tab" :class="{ active: activeView === 'ranking' }" @click="activeView = 'ranking'">
+        击杀速度排名
+      </div>
+    </div>
+
+    <div v-if="activeView === 'list'">
+      <div class="category-tabs">
+        <div v-for="category in categories" :key="category"
+          :class="['category-tab', activeCategory === category ? 'active' : '']" @click="activeCategory = category">
+          {{ category }}
+        </div>
+      </div>
+
+      <div class="weapons-grid">
+        <div v-for="weapon in filteredWeapons" :key="weapon.weapon_name" class="weapon-card"
+          :class="{ selected: isSelected(weapon) }" @click="toggleWeaponSelection(weapon)">
+          <input type="checkbox" class="compare-checkbox" :checked="isSelected(weapon)" />
+          <div class="card-header">
+            <div class="weapon-name">{{ weapon.weapon_name }}</div>
+            <div class="weapon-type">{{ weapon.infobox.Type }} - {{ weapon.infobox.Build }}</div>
+          </div>
+          <div class="card-body">
+            <div v-if="getMeleeDamage(weapon)" class="melee-damage">
+              {{ getMeleeDamage(weapon) }}
+            </div>
+            <div v-else class="weapon-stats">
+              <div class="stat-item">
+                <span class="stat-label">身体伤害</span>
+                <span class="stat-value">{{ weapon.infobox.Body }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">头部伤害</span>
+                <span class="stat-value">{{ weapon.infobox.Head || 'N/A' }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">射速 (RPM)</span>
+                <span class="stat-value">{{ weapon.infobox.RPM || 'N/A' }}</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">弹匣容量</span>
+                <span class="stat-value">{{ weapon.infobox.Magazine || 'N/A' }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="filteredWeapons.length === 0" class="no-results">
+          没有找到匹配的武器
+        </div>
+      </div>
+
+      <div class="compare-section" v-if="selectedWeapons.length > 0">
+        <div class="selected-count">已选择 {{ selectedWeapons.length }} 把武器进行对比</div>
+        <button class="compare-btn" @click="showCompareModal">对比武器</button>
+        <button class="compare-btn" @click="clearSelection">清空选择</button>
+      </div>
+    </div>
+
+    <div v-if="activeView === 'ranking'">
+      <div class="ranking-tabs">
+        <div class="ranking-tab" :class="{ active: activeRanking === 'light' }" @click="activeRanking = 'light'">
+          轻型目标 (150HP)
+        </div>
+        <div class="ranking-tab" :class="{ active: activeRanking === 'medium' }" @click="activeRanking = 'medium'">
+          中型目标 (250HP)
+        </div>
+        <div class="ranking-tab" :class="{ active: activeRanking === 'heavy' }" @click="activeRanking = 'heavy'">
+          重型目标 (350HP)
+        </div>
+      </div>
+
+      <div class="ranking-section two-columns">
+        <div class="ranking-column">
+          <h3>按头部击杀时间排序</h3>
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>武器</th>
+                <th>TTK</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(weapon, index) in rankedWeaponsByHead" :key="weapon.weapon_name">
+                <td>{{ index + 1 }}</td>
+                <td>{{ weapon.weapon_name }}</td>
+                <td>{{ getHeadTTK(weapon) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ranking-column">
+          <h3>按身体击杀时间排序</h3>
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>武器</th>
+                <th>TTK</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(weapon, index) in rankedWeaponsByBody" :key="weapon.weapon_name">
+                <td>{{ index + 1 }}</td>
+                <td>{{ weapon.weapon_name }}</td>
+                <td>{{ getBodyTTK(weapon) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-modal" v-if="showCompare">
+      <div class="compare-header">
+        <h2>武器对比</h2>
+        <button class="compare-btn" @click="showCompare = false">
+          <i class="fas fa-times"></i> 关闭
+        </button>
+      </div>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>属性</th>
+            <th v-for="weapon in selectedWeapons" :key="weapon.weapon_name">
+              {{ weapon.weapon_name }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>类型</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-type'">
+              {{ weapon.infobox.Type }}
+            </td>
+          </tr>
+          <tr>
+            <td>适用职业</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-build'">
+              {{ weapon.infobox.Build }}
+            </td>
+          </tr>
+          <tr>
+            <td>身体伤害</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-body'"
+              :class="getBestValueClass(selectedWeapons, 'Body', weapon, 'max')">
+              {{ weapon.infobox.Body }}
+            </td>
+          </tr>
+          <tr>
+            <td>头部伤害</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-head'"
+              :class="getBestValueClass(selectedWeapons, 'Head', weapon, 'max')">
+              {{ weapon.infobox.Head }}
+            </td>
+          </tr>
+          <tr>
+            <td>射速 (RPM)</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-rpm'"
+              :class="getBestValueClass(selectedWeapons, 'RPM', weapon, 'max')">
+              {{ weapon.infobox.RPM }}
+            </td>
+          </tr>
+          <tr>
+            <td>弹匣容量</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-mag'"
+              :class="getBestValueClass(selectedWeapons, 'Magazine', weapon, 'max')">
+              {{ weapon.infobox.Magazine }}
+            </td>
+          </tr>
+          <tr>
+            <td>最小射程</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-minrange'"
+              :class="getBestValueClass(selectedWeapons, 'Min Range', weapon, 'max')">
+              {{ weapon.infobox['Min Range'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>最大射程</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-maxrange'"
+              :class="getBestValueClass(selectedWeapons, 'Max Range', weapon, 'max')">
+              {{ weapon.infobox['Max Range'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>伤害倍率</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-multiplier'"
+              :class="getBestValueClass(selectedWeapons, 'Multiplier', weapon, 'max')">
+              {{ weapon.infobox['Multiplier'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>空仓换弹</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-empty'"
+              :class="getBestValueClass(selectedWeapons, 'Empty Reload', weapon, 'min')">
+              {{ weapon.infobox['Empty Reload'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>战术换弹</td>
+            <td v-for="weapon in selectedWeapons" :key="weapon.weapon_name + '-tactical'"
+              :class="getBestValueClass(selectedWeapons, 'Tactical Reload', weapon, 'min')">
+              {{ weapon.infobox['Tactical Reload'] || 'N/A' }}
+            </td>
+          </tr>
+          <tr>
+            <td>距离选择</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              <input type="range"
+                     :min="getMinRange(weapon)"
+                     :max="getMaxRange(weapon)"
+                     :step="0.5"
+                     v-model="distanceSelections[idx]" />
+              <span>{{ distanceSelections[idx] }}m</span>
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离轻型头部TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 150, true) }}
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离轻型身体TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 150, false) }}
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离中型头部TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 250, true) }}
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离中型身体TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 250, false) }}
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离重型头部TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 350, true) }}
+            </td>
+          </tr>
+          <tr>
+            <td>当前距离重型身体TTK</td>
+            <td v-for="(weapon, idx) in selectedWeapons" :key="weapon.weapon_name">
+              {{ getTTKAtDistance(weapon, distanceSelections[idx], 350, false) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="overlay" :class="{ active: showCompare }" @click="showCompare = false"></div>
+  </div>
+
+  <script>
+    const { createApp, ref, computed, onMounted, watch } = Vue;
+
+    createApp({
+      setup() {
+        const weapons = ref([]);
+        const searchQuery = ref('');
+        const activeCategory = ref('Heavy');
+        const activeView = ref('list');
+        const activeRanking = ref('light');
+        const selectedWeapons = ref([]);
+        const showCompare = ref(false);
+        const loading = ref(true);
+        const error = ref(null);
+
+        const categories = ['Heavy', 'Light', 'Medium'];
+
+        // 从外部JSON文件加载武器数据
+        const loadWeaponData = async () => {
+          try {
+            loading.value = true;
+            error.value = null;
+
+            // 正确加载JSON文件
+            const response = await fetch('weaponsDataCN.json');
+
+            if (!response.ok) {
+              throw new Error('无法加载武器数据');
+            }
+
+            const data = await response.json();
+            weapons.value = data.weapons || data;
+          } catch (err) {
+            console.error('加载武器数据失败:', err);
+            error.value = err.message;
+          } finally {
+            loading.value = false;
+          }
+        };
+
+        // 检查武器是否被选中
+        const isSelected = (weapon) => {
+          return selectedWeapons.value.some(w => w.weapon_name === weapon.weapon_name);
+        };
+
+        // 切换武器选择状态
+        const toggleWeaponSelection = (weapon) => {
+          if (isSelected(weapon)) {
+            selectedWeapons.value = selectedWeapons.value.filter(w => w.weapon_name !== weapon.weapon_name);
+          } else {
+            if (selectedWeapons.value.length < 4) {
+              selectedWeapons.value.push(weapon);
+            } else {
+              alert('最多只能选择4把武器进行对比');
+            }
+          }
+        };
+
+        // 清空选择
+        const clearSelection = () => {
+          selectedWeapons.value = [];
+        };
+
+        // 显示对比模态框
+        const showCompareModal = () => {
+          showCompare.value = true;
+        };
+
+        // 获取身体击杀时间
+        const getBodyTTK = (weapon, targetType = null) => {
+          const type = targetType || activeRanking.value;
+          if (weapon.parsed_overflow && weapon.parsed_overflow.damage_data) {
+            const bodyRow = weapon.parsed_overflow.damage_data.rows.find(row => row.body_part === "Body");
+            if (bodyRow && bodyRow[type]) {
+              return parseFloat(bodyRow[type].time_to_kill);
+            }
+          }
+          return "N/A";
+        };
+
+        // 获取头部击杀时间
+        const getHeadTTK = (weapon, targetType = null) => {
+          const type = targetType || activeRanking.value;
+          if (weapon.parsed_overflow && weapon.parsed_overflow.damage_data) {
+            const headRow = weapon.parsed_overflow.damage_data.rows.find(row => row.body_part === "Head");
+            if (headRow && headRow[type]) {
+              return parseFloat(headRow[type].time_to_kill);
+            }
+          }
+          return "N/A";
+        };
+
+        // 获取最佳TTK类名
+        const getBestTTKClass = (weapons, targetType, hitType, currentWeapon) => {
+          const ttkValues = weapons.map(weapon => {
+            const value = hitType === 'head' ?
+              getHeadTTK(weapon, targetType) :
+              getBodyTTK(weapon, targetType);
+            return typeof value === 'number' ? value : Infinity;
+          });
+
+          const minTTK = Math.min(...ttkValues);
+          const currentTTK = hitType === 'head' ?
+            getHeadTTK(currentWeapon, targetType) :
+            getBodyTTK(currentWeapon, targetType);
+
+          return typeof currentTTK === 'number' && currentTTK === minTTK ? 'best-value' : '';
+        };
+
+        // 获取最佳值类名
+        const getBestValueClass = (weapons, property, currentWeapon, bestType = 'max') => {
+          // 处理带单位的数值（如 "3.00s", "35m"）
+          const parseValue = (value) => {
+            if (!value) return 0;
+            const num = parseFloat(value);
+            return isNaN(num) ? 0 : num;
+          };
+
+          const values = weapons.map(weapon => parseValue(weapon.infobox[property]));
+
+          let bestValue;
+          if (bestType === 'max') {
+            bestValue = Math.max(...values);
+          } else {
+            bestValue = Math.min(...values);
+          }
+
+          const currentValue = parseValue(currentWeapon.infobox[property]);
+
+          if (currentValue === bestValue && bestValue !== 0) {
+            return 'best-value';
+          }
+
+          // 对于换弹时间等需要最小值的属性，标记最差值
+          if (bestType === 'min' && currentValue === Math.max(...values)) {
+            return 'worst-value';
+          }
+
+          return '';
+        };
+
+        // 按击杀时间排序的武器列表（排除近战武器）
+        const rankedWeapons = computed(() => {
+          // 过滤出非近战武器
+          const nonMeleeWeapons = weapons.value.filter(weapon =>
+            weapon.infobox.Type !== "近战 Melee" &&
+            weapon.infobox.Type !== "Melee"
+          );
+
+          // 过滤出近战武器
+          const meleeWeapons = weapons.value.filter(weapon =>
+            weapon.infobox.Type === "近战 Melee" ||
+            weapon.infobox.Type === "Melee"
+          );
+
+          // 对非近战武器进行排序
+          const sortedNonMelee = [...nonMeleeWeapons].sort((a, b) => {
+            const aTTK = getBodyTTK(a, activeRanking.value);
+            const bTTK = getBodyTTK(b, activeRanking.value);
+
+            if (typeof aTTK !== 'number') return 1;
+            if (typeof bTTK !== 'number') return -1;
+
+            return aTTK - bTTK;
+          });
+
+          // 将近战武器放在最后
+          return [...sortedNonMelee, ...meleeWeapons];
+        });
+
+        const rankedWeaponsByBody = computed(() => {
+          return [...weapons.value]
+            .filter(w => !isMeleeWeapon(w))
+            .sort((a, b) => {
+              const aTTK = parseFloat(getBodyTTK(a));
+              const bTTK = parseFloat(getBodyTTK(b));
+              return (isNaN(aTTK) ? Infinity : aTTK) - (isNaN(bTTK) ? Infinity : bTTK);
+            });
+        });
+        const rankedWeaponsByHead = computed(() => {
+          return [...weapons.value]
+            .filter(w => !isMeleeWeapon(w))
+            .sort((a, b) => {
+              const aTTK = parseFloat(getHeadTTK(a));
+              const bTTK = parseFloat(getHeadTTK(b));
+              return (isNaN(aTTK) ? Infinity : aTTK) - (isNaN(bTTK) ? Infinity : bTTK);
+            });
+        });
+
+        // 检查是否为近战武器
+        const isMeleeWeapon = (weapon) => {
+          return weapon.infobox.Type === "近战 Melee" ||
+            weapon.infobox.Type === "Melee" ||
+            (weapon.infobox.Type && weapon.infobox.Type.includes("近战"));
+        };
+
+        // 获取近战武器伤害显示
+        const getMeleeDamage = (weapon) => {
+          if (!isMeleeWeapon(weapon)) return null;
+
+          let damageText = `左键: ${weapon.infobox.Body}`;
+          if (weapon.infobox["Alt-Fire"]) {
+            damageText += ` | 右键: ${weapon.infobox["Alt-Fire"]}`;
+          }
+          return damageText;
+        };
+
+        // 过滤武器列表
+        const filteredWeapons = computed(() => {
+          return weapons.value.filter(weapon => {
+            const matchesCategory = weapon.infobox.Build === activeCategory.value;
+            const matchesSearch = weapon.weapon_name.toLowerCase().includes(searchQuery.value.toLowerCase());
+            return matchesCategory && matchesSearch;
+          });
+        });
+
+        const selectedWeapon = ref(null); // 当前选中的武器
+        const selectedDistance = ref(30); // 默认距离
+        const minRange = ref(30); // 默认最小射程
+        const maxRange = ref(37.5); // 默认最大射程
+        const distanceSelections = ref([]);
+
+        // 初始化每把武器的距离选择
+        watch(selectedWeapons, (newWeapons) => {
+          distanceSelections.value = newWeapons.map(w => getMinRange(w));
+        });
+
+        function parseDamage(value) {
+            if (typeof value === 'string') {
+                // 去掉括号及其内容
+                value = value.replace(/\(.*?\)/g, '').trim();
+                // 处理散弹格式
+                if (value.includes('×')) {
+                    const [perPellet, pelletCount] = value.split('×').map(Number);
+                    return perPellet * pelletCount;
+                }
+            }
+            return Number(value);
+        }
+        function getBaseDamage(weapon) {
+            return parseDamage(weapon.infobox?.["Body"] || 0);
+        }
+        function getHeadDamage(weapon) {
+            return parseDamage(weapon.infobox?.["Head"] || getBaseDamage(weapon));
+        }
+        function getRPM(weapon) {
+            let val = weapon.infobox?.["RPM"] || weapon.rpm || "0";
+            if (typeof val === "string" && val.includes(",")) {
+                // 取逗号后面的射速
+                val = val.split(",")[1];
+            }
+            return Number(val);
+        }
+        function getMinRange(weapon) {
+            const val = weapon.infobox?.["Min Range"];
+            return val ? Number(val.replace('m', '')) : 0;
+        }
+        function getMaxRange(weapon) {
+            const val = weapon.infobox?.["Max Range"];
+            return val ? Number(val.replace('m', '')) : 100;
+        }
+        function getMaxMultiplier(weapon) {
+            return Number(weapon.infobox?.["Multiplier"] || 1);
+        }
+
+        const getDamageMultiplier = (weapon, distance) => {
+          const D_min = getMinRange(weapon);
+          const D_max = getMaxRange(weapon);
+          const M_max = getMaxMultiplier(weapon);
+          if (distance <= D_min) return 1;
+          if (distance >= D_max) return M_max;
+          return 1 - (1 - M_max) * ((distance - D_min) / (D_max - D_min));
+        };
+
+        // 计算头部/身体伤害
+        const getDamageAtDistance = (weapon, distance, isHead = false) => {
+          const baseDamage = isHead ? getHeadDamage(weapon) : getBaseDamage(weapon);
+          const multiplier = getDamageMultiplier(weapon, distance);
+          return baseDamage * multiplier;
+        };
+
+        // 计算TTK
+        const getTTKAtDistance = (weapon, distance, hp, isHead = false) => {
+          const damage = getDamageAtDistance(weapon, distance, isHead);
+          const rpm = getRPM(weapon);
+          if (!damage || !rpm) return '-';
+          const N = Math.ceil(hp / damage);
+          return ((N - 1) * 60 / rpm).toFixed(2) + ' 秒';
+        };
+
+        onMounted(() => {
+          loadWeaponData();
+        });
+
+        return {
+          weapons,
+          searchQuery,
+          activeCategory,
+          activeView,
+          activeRanking,
+          selectedWeapons,
+          showCompare,
+          loading,
+          error,
+          categories,
+          filteredWeapons,
+          rankedWeapons,
+          rankedWeaponsByBody,
+          rankedWeaponsByHead,
+          isSelected,
+          toggleWeaponSelection,
+          clearSelection,
+          showCompareModal,
+          getBodyTTK,
+          getHeadTTK,
+          getBestTTKClass,
+          getBestValueClass,
+          isMeleeWeapon,
+          getMeleeDamage,
+          selectedWeapon,
+          selectedDistance,
+          minRange,
+          maxRange,
+          distanceSelections,
+          getMinRange,
+          getMaxRange,
+          getTTKAtDistance,
+          getDamageAtDistance,
+          getDamageMultiplier,
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+
+</html>
