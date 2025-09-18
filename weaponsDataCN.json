@@ -2200,7 +2200,7 @@
           },
           "heavy": {
             "shells_to_kill": "5",
-            "time_to_kill": "1.75"
+            "time_to_kill": "1.26"
           }
         },
         {
@@ -2215,7 +2215,7 @@
           },
           "heavy": {
             "shells_to_kill": "5",
-            "time_to_kill": "1.75"
+            "time_to_kill": "1.26"
           }
         }
       ]
