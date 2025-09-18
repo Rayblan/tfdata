@@ -920,31 +920,31 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "7",
-            "time_to_kill": "0.42"
+            "shells_to_kill": "6",
+            "time_to_kill": "0.35"
           },
           "medium": {
-            "shells_to_kill": "11",
-            "time_to_kill": "0.70"
+            "shells_to_kill": "10",
+            "time_to_kill": "0.63"
           },
           "heavy": {
-            "shells_to_kill": "15",
-            "time_to_kill": "0.98"
+            "shells_to_kill": "14",
+            "time_to_kill": "0.91"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "10",
-            "time_to_kill": "0.63"
+            "shells_to_kill": "9",
+            "time_to_kill": "0.56"
           },
           "medium": {
-            "shells_to_kill": "16",
-            "time_to_kill": "1.05"
+            "shells_to_kill": "15",
+            "time_to_kill": "0.98"
           },
           "heavy": {
-            "shells_to_kill": "22",
-            "time_to_kill": "1.47"
+            "shells_to_kill": "21",
+            "time_to_kill": "1.40"
           }
         }
       ]
@@ -1355,31 +1355,31 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "5",
-            "time_to_kill": "0.44"
+            "shells_to_kill": "4",
+            "time_to_kill": "0.33"
           },
           "medium": {
-            "shells_to_kill": "8",
-            "time_to_kill": "0.78"
+            "shells_to_kill": "7",
+            "time_to_kill": "0.67"
           },
           "heavy": {
-            "shells_to_kill": "11",
-            "time_to_kill": "1.11"
+            "shells_to_kill": "10",
+            "time_to_kill": "1.00"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "7",
-            "time_to_kill": "0.67"
+            "shells_to_kill": "6",
+            "time_to_kill": "0.56"
           },
           "medium": {
-            "shells_to_kill": "12",
-            "time_to_kill": "1.22"
+            "shells_to_kill": "10",
+            "time_to_kill": "1.00"
           },
           "heavy": {
-            "shells_to_kill": "16",
-            "time_to_kill": "1.67"
+            "shells_to_kill": "14",
+            "time_to_kill": "1.44"
           }
         }
       ]
@@ -1425,30 +1425,30 @@
           "body_part": "Head",
           "light": {
             "shells_to_kill": "2",
-            "time_to_kill": "0.87"
+            "time_to_kill": "0.78"
           },
           "medium": {
             "shells_to_kill": "3",
-            "time_to_kill": "1.74"
+            "time_to_kill": "1.56"
           },
           "heavy": {
-            "shells_to_kill": "4",
-            "time_to_kill": "2.61"
+            "shells_to_kill": "3",
+            "time_to_kill": "1.56"
           }
         },
         {
           "body_part": "Body",
           "light": {
             "shells_to_kill": "2",
-            "time_to_kill": "0.87"
+            "time_to_kill": "0.78"
           },
           "medium": {
             "shells_to_kill": "3",
-            "time_to_kill": "1.74"
+            "time_to_kill": "1.56"
           },
           "heavy": {
-            "shells_to_kill": "4",
-            "time_to_kill": "2.61"
+            "shells_to_kill": "3",
+            "time_to_kill": "1.56"
           }
         }
       ]
@@ -1952,8 +1952,8 @@
             "time_to_kill": "0.72"
           },
           "medium": {
-            "shells_to_kill": "12",
-            "time_to_kill": "1.32"
+            "shells_to_kill": "11",
+            "time_to_kill": "1.20"
           },
           "heavy": {
             "shells_to_kill": "16",
@@ -2191,12 +2191,12 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.63"
+            "shells_to_kill": "2",
+            "time_to_kill": "0.32"
           },
           "medium": {
-            "shells_to_kill": "4",
-            "time_to_kill": "0.95"
+            "shells_to_kill": "3",
+            "time_to_kill": "0.63"
           },
           "heavy": {
             "shells_to_kill": "5",
@@ -2206,12 +2206,12 @@
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.63"
+            "shells_to_kill": "2",
+            "time_to_kill": "0.32"
           },
           "medium": {
-            "shells_to_kill": "4",
-            "time_to_kill": "0.95"
+            "shells_to_kill": "3",
+            "time_to_kill": "0.63"
           },
           "heavy": {
             "shells_to_kill": "5",
