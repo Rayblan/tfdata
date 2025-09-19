@@ -221,8 +221,8 @@
     "Build": "Light",
     "Type": "精确射击武器 Marksman Rifle",
     "Price": "500",
-    "Body": "44",
-    "Head": "88",
+    "Body": "42",
+    "Head": "84",
     "Min Range": "50m",
     "Max Range": "55m",
     "Multiplier": "0.75",
@@ -259,8 +259,8 @@
             "time_to_kill": "0.44"
           },
           "heavy": {
-            "shells_to_kill": "4",
-            "time_to_kill": "0.67"
+            "shells_to_kill": "5",
+            "time_to_kill": "0.89"
           }
         },
         {
@@ -274,8 +274,8 @@
             "time_to_kill": "1.11"
           },
           "heavy": {
-            "shells_to_kill": "8",
-            "time_to_kill": "1.34"
+            "shells_to_kill": "9",
+            "time_to_kill": "1.78"
           }
         }
       ]
@@ -1028,7 +1028,7 @@
     "Build": "Medium",
     "Type": "精确射击武器 Marksman Rifle",
     "Price": "500",
-    "Body": "88",
+    "Body": "84",
     "Head": "126 (1.5×)",
     "Min Range": "40m",
     "Max Range": "45m",
@@ -1059,30 +1059,30 @@
           "body_part": "Head",
           "light": {
             "shells_to_kill": "2",
-            "time_to_kill": "0.78"
+            "time_to_kill": "0.82"
           },
           "medium": {
             "shells_to_kill": "2",
-            "time_to_kill": "0.78"
+            "time_to_kill": "0.82"
           },
           "heavy": {
             "shells_to_kill": "3",
-            "time_to_kill": "1.56"
+            "time_to_kill": "1.64"
           }
         },
         {
           "body_part": "Body",
           "light": {
             "shells_to_kill": "2",
-            "time_to_kill": "0.78"
+            "time_to_kill": "0.82"
           },
           "medium": {
             "shells_to_kill": "3",
-            "time_to_kill": "1.56"
+            "time_to_kill": "1.64"
           },
           "heavy": {
             "shells_to_kill": "5",
-            "time_to_kill": "3.12"
+            "time_to_kill": "3.29"
           }
         }
       ]
@@ -1717,8 +1717,8 @@
     "Price": "500",
     "Body": "44",
     "Head": "88",
-    "Min Range": "32m",
-    "Max Range": "39m",
+    "Min Range": "35m",
+    "Max Range": "42.5m",
     "Multiplier": "0.50",
     "RPM": "230",
     "Magazine": "14",
