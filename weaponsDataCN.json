@@ -2368,8 +2368,8 @@
     "Build": "Heavy",
     "Type": "近战 Melee",
     "Price": "Free",
-    "Body": "100",
-    "Alt-Fire": "175"
+    "Body": "115",
+    "Alt-Fire": "200"
   },
   "parsed_overflow": {
     "damage_data": {
