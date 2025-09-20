@@ -221,8 +221,8 @@
     "Build": "Light",
     "Type": "精确射击武器 Marksman Rifle",
     "Price": "500",
-    "Body": "42",
-    "Head": "84",
+    "Body": "40",
+    "Head": "80",
     "Min Range": "50m",
     "Max Range": "55m",
     "Multiplier": "0.75",
@@ -255,8 +255,8 @@
             "time_to_kill": "0.22"
           },
           "medium": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.44"
+            "shells_to_kill": "4",
+            "time_to_kill": "0.67"
           },
           "heavy": {
             "shells_to_kill": "5",
@@ -270,8 +270,8 @@
             "time_to_kill": "0.67"
           },
           "medium": {
-            "shells_to_kill": "6",
-            "time_to_kill": "1.11"
+            "shells_to_kill": "7",
+            "time_to_kill": "1.33"
           },
           "heavy": {
             "shells_to_kill": "9",
