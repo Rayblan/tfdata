@@ -1327,10 +1327,10 @@
     "Price": "500",
     "Body": "25",
     "Head": "37.5",
-    "Min Range": "35m",
-    "Max Range": "40m",
+    "Min Range": "30m",
+    "Max Range": "47.5m",
     "Multiplier": "0.55",
-    "RPM": "540",
+    "RPM": "525",
     "Magazine": "20",
     "Empty Reload": "2.10s",
     "Tactical Reload": "2.10s"
