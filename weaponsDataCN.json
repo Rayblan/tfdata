@@ -1325,13 +1325,13 @@
     "Build": "Medium",
     "Type": "突击步枪 Assault Rifle",
     "Price": "500",
-    "Body": "20",
-    "Head": "30",
+    "Body": "22",
+    "Head": "33",
     "Min Range": "30m",
-    "Max Range": "47.5m",
+    "Max Range": "37.5m",
     "Multiplier": "0.55",
     "RPM": "525",
-    "Magazine": "20",
+    "Magazine": "25",
     "Empty Reload": "2.10s",
     "Tactical Reload": "2.10s"
   },
@@ -1356,30 +1356,30 @@
           "body_part": "Head",
           "light": {
             "shells_to_kill": "5",
-            "time_to_kill": "0.33"
+            "time_to_kill": "0.44"
           },
           "medium": {
-            "shells_to_kill": "9",
-            "time_to_kill": "0.67"
+            "shells_to_kill": "8",
+            "time_to_kill": "0.78"
           },
           "heavy": {
-            "shells_to_kill": "12",
-            "time_to_kill": "1.00"
+            "shells_to_kill": "11",
+            "time_to_kill": "1.11"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "8",
-            "time_to_kill": "0.56"
+            "shells_to_kill": "7",
+            "time_to_kill": "0.67"
           },
           "medium": {
-            "shells_to_kill": "13",
-            "time_to_kill": "1.00"
+            "shells_to_kill": "12",
+            "time_to_kill": "1.22"
           },
           "heavy": {
-            "shells_to_kill": "18",
-            "time_to_kill": "1.44"
+            "shells_to_kill": "16",
+            "time_to_kill": "1.67"
           }
         }
       ]
