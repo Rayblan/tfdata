@@ -428,8 +428,8 @@
     "Build": "Light",
     "Type": "精确射击武器 Marksman Rifle",
     "Price": "500",
-    "Body": "60",
-    "Head": "90",
+    "Body": "60(满蓄124",
+    "Head": "90(满蓄186)",
     "Alt-Fire Body": "124 (Max Draw)",
     "Alt-Fire Head": "186 (Max Draw)",
     "RPM": "78, 48",
@@ -1097,8 +1097,8 @@
     "Build": "Medium",
     "Type": "散弹 Shotgun",
     "Price": "500",
-    "Body": "9×11",
-    "Head": "9×11",
+    "Body": "11×11",
+    "Head": "11×11",
     "Min Range": "10m",
     "Max Range": "20m",
     "Multiplier": "0.65",
@@ -1131,11 +1131,11 @@
             "time_to_kill": "0.60"
           },
           "medium": {
-            "shells_to_kill": "3",
+            "shells_to_kill": "2",
             "time_to_kill": "1.20"
           },
           "heavy": {
-            "shells_to_kill": "4",
+            "shells_to_kill": "3",
             "time_to_kill": "1.80"
           }
         },
@@ -1146,11 +1146,11 @@
             "time_to_kill": "0.60"
           },
           "medium": {
-            "shells_to_kill": "3",
+            "shells_to_kill": "2",
             "time_to_kill": "1.20"
           },
           "heavy": {
-            "shells_to_kill": "4",
+            "shells_to_kill": "3",
             "time_to_kill": "1.80"
           }
         }
@@ -1325,8 +1325,8 @@
     "Build": "Medium",
     "Type": "突击步枪 Assault Rifle",
     "Price": "500",
-    "Body": "25",
-    "Head": "37.5",
+    "Body": "20",
+    "Head": "30",
     "Min Range": "30m",
     "Max Range": "47.5m",
     "Multiplier": "0.55",
@@ -1355,30 +1355,30 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "4",
+            "shells_to_kill": "5",
             "time_to_kill": "0.33"
           },
           "medium": {
-            "shells_to_kill": "7",
+            "shells_to_kill": "9",
             "time_to_kill": "0.67"
           },
           "heavy": {
-            "shells_to_kill": "10",
+            "shells_to_kill": "12",
             "time_to_kill": "1.00"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "6",
+            "shells_to_kill": "8",
             "time_to_kill": "0.56"
           },
           "medium": {
-            "shells_to_kill": "10",
+            "shells_to_kill": "13",
             "time_to_kill": "1.00"
           },
           "heavy": {
-            "shells_to_kill": "14",
+            "shells_to_kill": "18",
             "time_to_kill": "1.44"
           }
         }
@@ -1463,8 +1463,8 @@
     "Build": "Medium",
     "Type": "精确射击武器 Marksman Rifle",
     "Price": "500",
-    "Body": "50",
-    "Head": "75(1.5x)",
+    "Body": "48",
+    "Head": "72(1.5x)",
     "Min Range": "45m",
     "Max Range": "50m",
     "Multiplier": "0.75",
@@ -1493,8 +1493,8 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "2",
-            "time_to_kill": "0.30"
+            "shells_to_kill": "3",
+            "time_to_kill": "0.60"
           },
           "medium": {
             "shells_to_kill": "4",
@@ -1508,16 +1508,16 @@
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.60"
+            "shells_to_kill": "4",
+            "time_to_kill": "0.90"
           },
           "medium": {
-            "shells_to_kill": "5",
-            "time_to_kill": "1.20"
+            "shells_to_kill": "6",
+            "time_to_kill": "1.50"
           },
           "heavy": {
-            "shells_to_kill": "7",
-            "time_to_kill": "1.80"
+            "shells_to_kill": "8",
+            "time_to_kill": "2.10"
           }
         }
       ]
