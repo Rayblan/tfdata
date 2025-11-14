@@ -1,303 +1,80 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE FINALS 游戏道具</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            background-attachment: fixed;
-            color: #fff;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .title-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        .author-link {
-            position: absolute;
-            right: -180px;
-            bottom: 15px;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .author-link:hover {
-            color: #ffcc66;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .title-container {
-                display: block;
-                text-align: center;
-            }
-            
-            .author-link {
-                position: static;
-                display: block;
-                margin-top: 5px;
-                right: auto;
-                bottom: auto;
-            }
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-right: 50px;
-            margin-left: 50px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .search-box {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            position: relative;
-        }
-        
-        .search-input {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px 20px;
-            padding-left: 45px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            outline: none;
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: calc(50% - 230px);
-            top: 15px;
-            color: #666;
-        }
-        
-        .main-tabs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px 0;
-        }
-        
-        .main-tab {
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            border: 2px solid transparent;
-        }
-        
-        .main-tab:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-        
-        .main-tab.active {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: #ff9900;
-            box-shadow: 0 0 15px rgba(255, 153, 0, 0.5);
-        }
-        
-        .gadgets-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .gadget-card {
-            background: linear-gradient(145deg, #2c3e50, #1a2530);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        
-        .gadget-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        .card-header {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .gadget-name {
-            font-size: 1.6rem;
-            margin-bottom: 5px;
-            color: #ff9900;
-        }
-        
-        .gadget-build {
-            display: inline-block;
-            padding: 4px 10px;
-            background-color: rgba(255, 153, 0, 0.3);
-            color: #fff;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .gadget-type {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        .gadget-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-        
-        .stat-value {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-        
-        .no-results {
-            text-align: center;
-            grid-column: 1 / -1;
-            padding: 40px;
-            font-size: 1.2rem;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 12px;
-        }
-        
-        @media (max-width: 768px) {
-            .gadgets-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .search-input {
-                padding: 12px 15px;
-                padding-left: 40px;
-            }
-            
-            .search-icon {
-                left: calc(50% - 165px);
-            }
-        }
-    </style>
+    <title>终极角逐游戏道具</title>
+
+    <script src="vue.global.js"></script>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="tfdatarank3.css">
+
 </head>
+
 <body>
     <div id="app">
         <div class="container">
             <header>
                 <div class="title-container">
-                    <h1>THE FINALS 游戏道具</h1>
-                    <a href="https://space.bilibili.com/85550309" class="author-link">Created by B站：哥布林纯水</a>
+                    <h1>终极角逐游戏道具</h1>
+                    <a href="https://space.bilibili.com/85550309" class="author-link">欢迎关注 B站：哥布林纯水</a>
                 </div>
                 <p class="subtitle">探索所有道具的详细信息与统计数据</p>
-                
+
                 <div class="search-box">
                     <i class="search-icon">🔍</i>
-                    <input 
-                        type="text" 
-                        class="search-input"
-                        v-model="searchQuery" 
-                        placeholder="搜索道具名称..." 
-                    />
+                    <input type="text" class="search-input" v-model="searchQuery" placeholder="搜索道具名称..." />
                 </div>
             </header>
             
+            <!-- 修改后的标签页部分 -->
             <div class="main-tabs">
-                <div 
-                    v-for="(tab, index) in tabs" 
-                    :key="index" 
-                    :class="['main-tab', { active: activeTab === tab.id }]"
-                    @click="activeTab = tab.id"
-                >
-                    {{ tab.name }}
+                <!-- 武器数据按钮 -->
+                <div class="main-tab">
+                    <a href="TFdataCN.html" class="tab-link">武器数据</a>
+                </div>
+
+                <!-- 手动编写的四个标签页 -->
+                <div class="main-tab" 
+                     :class="{ active: activeTab === 'light' }" 
+                     @click="activeTab = 'light'">
+                    轻型道具
+                </div>
+                
+                <div class="main-tab" 
+                     :class="{ active: activeTab === 'medium' }" 
+                     @click="activeTab = 'medium'">
+                    中型道具
+                </div>
+                
+                <div class="main-tab" 
+                     :class="{ active: activeTab === 'heavy' }" 
+                     @click="activeTab = 'heavy'">
+                    重型道具
+                </div>
+                
+                <div class="main-tab" 
+                     :class="{ active: activeTab === 'universal' }" 
+                     @click="activeTab = 'universal'">
+                    通用道具
                 </div>
             </div>
-            
+
             <div class="gadgets-grid">
-                <div 
-                    v-for="gadget in filteredGadgets" 
-                    :key="gadget.game" 
-                    class="gadget-card"
-                >
+                <div v-for="gadget in filteredGadgets" :key="gadget.game" class="gadget-card">
                     <div class="card-header">
                         <h3 class="gadget-name">{{ gadget.game }}</h3>
                         <span class="gadget-build">{{ gadget.Build }}</span>
                         <div class="gadget-type">{{ gadget.Type }}</div>
                     </div>
-                    
+
                     <div class="card-body">
                         <div class="gadget-stats">
-                            <div class="stat-item" v-if="gadget.Price">
+                            <!-- <div class="stat-item" v-if="gadget.Price">
                                 <span class="stat-label">价格:</span>
                                 <span class="stat-value">{{ gadget.Price }}</span>
-                            </div>
+                            </div> -->
                             <div class="stat-item" v-if="gadget.Cooldown">
                                 <span class="stat-label">冷却:</span>
                                 <span class="stat-value">{{ gadget.Cooldown }}</span>
@@ -353,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="no-results" v-if="filteredGadgets.length === 0">
                     没有找到匹配的道具
                 </div>
@@ -362,476 +139,167 @@
     </div>
 
     <script>
-        const { createApp, ref, computed } = Vue;
-        
-        const gadgetsData = {
-            "Breach_Charge": {
-                "game": "便携炸药 Breach_Charge",
-                "url": "https://www.thefinals.wiki/wiki/Breach_Charge",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "Free",
-                "Cooldown": "30s",
-                "Ammo": "3",
-                "Damage": "80",
-                "Damage Radius": "2.5m",
-                "Priming Time": "1.5s",
-                "Max Deployed": "3",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/d/d3/Breaching_Charge1.png/348px-Breaching_Charge1.png"
-            },
-            "Gateway": {
-                "game": "传送门 Gateway",
-                "url": "https://www.thefinals.wiki/wiki/Gateway",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "800",
-                "Cooldown": "40s",
-                "Ammo": "2",
-                "Max Range": "70m",
-                "Duration": "20s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/0/0c/Gateway.png/348px-Gateway.png"
-            },
-            "Glitch_Grenade": {
-                "game": "紊乱手雷 Glitch_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Glitch_Grenade",
-                "Build": "Light",
-                "Type": "Offensive",
-                "Price": "500",
-                "Cooldown": "20s",
-                "Ammo": "2",
-                "Duration": "5s",
-                "Priming Time": "1.5s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/6/6c/Glitch_Grenade.png/348px-Glitch_Grenade.png"
-            },
-            "Gravity_Vortex": {
-                "game": "重力涡旋 Gravity_Vortex",
-                "url": "https://www.thefinals.wiki/wiki/Gravity_Vortex",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "20s",
-                "Ammo": "1",
-                "Duration": "7s (Min), 10s (Max)",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/a/a0/Gravity_Vortex.png/348px-Gravity_Vortex.png"
-            },
-            "Infuser": {
-                "game": "治疗手枪 Infuser",
-                "url": "https://www.thefinals.wiki/wiki/Infuser",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "2,200",
-                "Cooldown": "12s",
-                "Ammo": "20",
-                "rpm": "800",
-                "Healing": "14",
-                "image_url": "https://www.thefinals.wiki/w/images/e/e5/H%2B_Infuser_Infobox.png"
-            },
-            "Sonar_Grenade": {
-                "game": "声呐手雷 Sonar_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Sonar_Grenade",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "Free",
-                "Cooldown": "45s",
-                "Ammo": "2",
-                "Radius": "12m",
-                "Duration": "5.25s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/8/87/Sonar_Grenade_Icon.png/348px-Sonar_Grenade_Icon.png"
-            },
-            "Nullifier": {
-                "game": "无效化 Nullifier",
-                "url": "https://www.thefinals.wiki/wiki/Nullifier",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "15s",
-                "Ammo": "1",
-                "Max Range": "16m",
-                "Duration": "3.75s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/f/f1/Stun_Gun.png/348px-Stun_Gun.png"
-            },
-            "Thermal_Bore": {
-                "game": "热孔钻弹 Thermal_Bore",
-                "url": "https://www.thefinals.wiki/wiki/Thermal_Bore",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "45s",
-                "Ammo": "2",
-                "Damage": "25",
-                "Damage Radius": "2.5m (Inner) 3m (Outer)",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/9/9e/Thermal_Bore_Sideview.png/348px-Thermal_Bore_Sideview.png"
-            },
-            "Thermal_Vision": {
-                "game": "热成像 Thermal_Vision",
-                "url": "https://www.thefinals.wiki/wiki/Thermal_Vision",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "10s",
-                "Ammo": "1",
-                "Duration": "20s",
-                "image_url": "https://www.thefinals.wiki/w/images/8/83/Thermal_Vision.png"
-            },
-            "Tracking_Dart": {
-                "game": "追踪飞镖 Tracking_Dart",
-                "url": "https://www.thefinals.wiki/wiki/Tracking_Dart",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "12s",
-                "Ammo": "4",
-                "Damage": "5",
-                "Duration": "13s",
-                "image_url": "https://www.thefinals.wiki/w/images/b/be/Tracking_Dart.png"
-            },
-            "Vanishing_Bomb": {
-                "game": "隐身雷 Vanishing_Bomb",
-                "url": "https://www.thefinals.wiki/wiki/Vanishing_Bomb",
-                "Build": "Light",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "18s",
-                "Ammo": "1",
-                "Radius": "4m",
-                "Duration": "6s (Self)7.5s (Team)",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/3/3d/Vanishing_Bomb_Icon.png/348px-Vanishing_Bomb_Icon.png"
-            },
-            "APS_Turret": {
-                "game": "APS_Turret",
-                "url": "https://www.thefinals.wiki/wiki/APS_Turret",
-                "Build": "Medium",
-                "Type": "Defensive",
-                "Price": "500",
-                "Cooldown": "30s",
-                "Ammo": "1",
-                "Radius": "3m",
-                "Health": "165",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/b/be/APS_Turret.png/348px-APS_Turret.png"
-            },
-            "Breach_Drill": {
-                "game": "破墙闪光 Breach_Drill",
-                "url": "https://www.thefinals.wiki/wiki/Breach_Drill",
-                "Build": "Medium",
-                "Type": "Utility",
-                "Price": "2,200",
-                "Cooldown": "25s",
-                "Ammo": "1",
-                "image_url": "https://www.thefinals.wiki/w/images/c/c6/BreachDrill_Infobox.png"
-            },
-            "Data_Reshaper": {
-                "game": "数据重塑器 Data_Reshaper",
-                "url": "https://www.thefinals.wiki/wiki/Data_Reshaper",
-                "Build": "Medium",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "26s",
-                "Ammo": "2",
-                "Max Range": "21m",
-                "image_url": "https://www.thefinals.wiki/w/images/4/45/Data_Reshaper.png"
-            },
-            "Defibrillator": {
-                "game": "除颤器 Defibrillator",
-                "url": "https://www.thefinals.wiki/wiki/Defibrillator",
-                "Build": "Medium",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "45s",
-                "Ammo": "1",
-                "Damage": "50",
-                "Duration": "Revive Sickness5s",
-                "Health": "50% HP on Revive",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/5/5f/Defibrillator.png/348px-Defibrillator.png"
-            },
-            "Explosive_Mine": {
-                "game": "爆炸地雷 Explosive_Mine",
-                "url": "https://www.thefinals.wiki/wiki/Explosive_Mine",
-                "Build": "Medium, Heavy",
-                "Type": "Defensive",
-                "Price": "500",
-                "Cooldown": "15s",
-                "Ammo": "1",
-                "Damage": "120",
-                "Environment Dmg": "1025",
-                "Damage Radius": "4.25m",
-                "Priming Time": "1.6s",
-                "Max Deployed": "2",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/2/22/Explosive_Mine.png/348px-Explosive_Mine.png"
-            },
-            "Gas_Mine": {
-                "game": "毒气地雷 Gas_Mine",
-                "url": "https://www.thefinals.wiki/wiki/Gas_Mine",
-                "Build": "Medium",
-                "Type": "Defensive",
-                "Price": "Free",
-                "Cooldown": "27s",
-                "Ammo": "2",
-                "Damage": "30/s to 60/s",
-                "Duration": "10s",
-                "Priming Time": "1.6s",
-                "Max Deployed": "2",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/c/ce/Gas_Mine.png/348px-Gas_Mine.png"
-            },
-            "Glitch_Trap": {
-                "game": "紊乱地雷 Glitch_Trap",
-                "url": "https://www.thefinals.wiki/wiki/Glitch_Trap",
-                "Build": "Medium",
-                "Type": "Defensive",
-                "Price": "Free",
-                "Cooldown": "20s",
-                "Ammo": "1",
-                "Max Range": "5m",
-                "Priming Time": "1.6s",
-                "Max Deployed": "2",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/7/75/Glitch_Trap.png/348px-Glitch_Trap.png"
-            },
-            "Jump_Pad": {
-                "game": "跳板 Jump_Pad",
-                "url": "https://www.thefinals.wiki/wiki/Jump_Pad",
-                "Build": "Medium",
-                "Type": "Utility",
-                "Price": "Free",
-                "Cooldown": "40s",
-                "Ammo": "1",
-                "Max Deployed": "1",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/4/4c/Jump_Pad.png/348px-Jump_Pad.png"
-            },
-            "Zipline": {
-                "game": "绳索 Zipline",
-                "url": "https://www.thefinals.wiki/wiki/Zipline",
-                "Build": "Medium",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "37s",
-                "Ammo": "1",
-                "Max Deployed": "1",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/f/f9/Zipline.png/348px-Zipline.png"
-            },
-            "Motion_Sensor": {
-                "game": "信号传感器 Motion_Sensor",
-                "url": "https://www.thefinals.wiki/wiki/Motion_Sensor",
-                "Build": "Medium, Heavy",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "20s",
-                "Ammo": "2",
-                "Radius": "11m",
-                "Max Deployed": "2",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/0/0e/Motion_Sensor.png/348px-Motion_Sensor.png"
-            },
-            "Anti-Gravity_Cube": {
-                "game": "反重力方块 Anti-Gravity_Cube",
-                "url": "https://www.thefinals.wiki/wiki/Anti-Gravity_Cube",
-                "Build": "Heavy",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "28s",
-                "Ammo": "1",
-                "Radius": "7m high, 4m wide",
-                "Duration": "20s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/1/1c/Anti-Gravity_Cube.png/348px-Anti-Gravity_Cube.png"
-            },
-            "Barricade": {
-                "game": "铁盾 Barricade",
-                "url": "https://www.thefinals.wiki/wiki/Barricade",
-                "Build": "Heavy",
-                "Type": "Defensive",
-                "Price": "Free",
-                "Cooldown": "30s",
-                "Ammo": "2",
-                "Max Deployed": "4",
-                "Health": "800 per panel",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/c/cd/Barricade_Gadget.png/348px-Barricade_Gadget.png"
-            },
-            "C4": {
-                "game": "C4",
-                "url": "https://www.thefinals.wiki/wiki/C4",
-                "Build": "Heavy",
-                "Type": "Offensive",
-                "Price": "500",
-                "Cooldown": "30s",
-                "Ammo": "1",
-                "Damage": "155",
-                "Damage Radius": "6.5m",
-                "Priming Time": "1.9s",
-                "Max Deployed": "2",
-                "Health": "25",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/e/e3/C4_charge.png/348px-C4_charge.png"
-            },
-            "Healing_Emitter": {
-                "game": "治疗球 Healing_Emitter",
-                "url": "https://www.thefinals.wiki/wiki/Healing_Emitter",
-                "Build": "Heavy",
-                "Type": "Utility",
-                "Price": "2,200",
-                "Cooldown": "30s",
-                "Ammo": "1",
-                "Radius": "5m",
-                "image_url": "https://www.thefinals.wiki/w/images/0/08/HealingEmitter_Infobox.png"
-            },
-            "Lockbolt": {
-                "game": "锁止器 Lockbolt",
-                "url": "https://www.thefinals.wiki/wiki/Lockbolt",
-                "Build": "Heavy",
-                "Type": "Utility",
-                "Price": "500",
-                "Cooldown": "40s",
-                "Ammo": "1",
-                "Max Range": "6m",
-                "Duration": "8s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/4/45/Lockbolt_Launcher.png/348px-Lockbolt_Launcher.png"
-            },
-            "Pyro_Mine": {
-                "game": "火焰地雷 Pyro_Mine",
-                "url": "https://www.thefinals.wiki/wiki/Pyro_Mine",
-                "Build": "Heavy",
-                "Type": "Defensive",
-                "Price": "500",
-                "Cooldown": "27s",
-                "Ammo": "2",
-                "Damage": "79 Trigger25/s Burn",
-                "Duration": "10s",
-                "Priming Time": "1.6s",
-                "Max Deployed": "2",
-                "image_url": "https://www.thefinals.wiki/w/images/a/a2/Pyro_Mine.png"
-            },
-            "RPG-7": {
-                "game": "RPG-7",
-                "url": "https://www.thefinals.wiki/wiki/RPG-7",
-                "Build": "Heavy",
-                "Type": "Offensive",
-                "Price": "Free",
-                "Cooldown": "45s2.15s Reload",
-                "Ammo": "1",
-                "Damage": "100",
-                "Damage Radius": "1.5m (Inner) 5.5m (Outer)",
-                "image_url": "https://www.thefinals.wiki/w/images/b/b8/RPG_Sideview.png"
-            },
-            "Flashbang": {
-                "game": "闪光弹 Flashbang",
-                "url": "https://www.thefinals.wiki/wiki/Flashbang",
-                "Build": "All",
-                "Type": "Offensive",
-                "Price": "Free",
-                "Cooldown": "18s",
-                "Ammo": "2",
-                "Duration": "4.5s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/8/86/Flashbang.png/348px-Flashbang.png"
-            },
-            "Frag_Grenade": {
-                "game": "爆炸手雷 Frag_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Frag_Grenade",
-                "Build": "All",
-                "Type": "Offensive",
-                "Price": "Free",
-                "Cooldown": "20s",
-                "Ammo": "1",
-                "Damage": "140",
-                "Environment Dmg": "900",
-                "Damage Radius": "2.5m (Inner) 5m (Outer)",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/6/6b/Frag_Grenade.png/348px-Frag_Grenade.png"
-            },
-            "Gas_Grenade": {
-                "game": "毒气手雷 Gas_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Gas_Grenade",
-                "Build": "All",
-                "Type": "Offensive",
-                "Price": "500",
-                "Cooldown": "30s",
-                "Ammo": "1",
-                "Damage": "30/s to 60/s",
-                "Radius": "5m",
-                "Duration": "12s",
-                "Priming Time": "N/A",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/f/fe/Gas_Grenade.png/348px-Gas_Grenade.png"
-            },
-            "Goo_Grenade": {
-                "game": "粘胶手雷 Goo_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Goo_Grenade",
-                "Build": "All",
-                "Type": "Defensive",
-                "Price": "Free",
-                "Cooldown": "30s",
-                "Ammo": "2",
-                "Health": "240 per Goo blob",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/d/d9/Goo_Grenade.png/348px-Goo_Grenade.png"
-            },
-            "Pyro_Grenade": {
-                "game": "火焰手雷 Pyro_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Pyro_Grenade",
-                "Build": "All",
-                "Type": "Offensive",
-                "Price": "Free",
-                "Cooldown": "30s",
-                "Ammo": "1",
-                "Damage": "20/s",
-                "Duration": "12s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/0/02/Pyro_Grenade.png/348px-Pyro_Grenade.png"
-            },
-            "Smoke_Grenade": {
-                "game": "烟雾弹 Smoke_Grenade",
-                "url": "https://www.thefinals.wiki/wiki/Smoke_Grenade",
-                "Build": "All",
-                "Type": "Defensive",
-                "Price": "Free",
-                "Cooldown": "50s",
-                "Ammo": "3",
-                "Duration": "17.5s",
-                "image_url": "https://www.thefinals.wiki/w/images/thumb/d/d5/Smoke_Grenade.png/348px-Smoke_Grenade.png"
+        const { createApp, ref, computed, onMounted } = Vue;
+
+        // 在外部定义响应式数据
+        const gadgetsData = ref([]);
+        const gadgetsLight = ref([]);
+        const gadgetsMedium = ref([]);
+        const gadgetsHeavy = ref([]);
+        const gadgetsUniversal = ref([]);
+        const loading = ref(true);
+        const error = ref(null);
+
+        const loadWeaponData = async () => {
+            try {
+                loading.value = true;
+                error.value = null;
+
+                const response = await fetch('gadgetsDataCN.json');
+                if (!response.ok) {
+                    throw new Error('无法加载道具数据');
+                }
+
+                const data = await response.json();
+                gadgetsData.value = data; // 直接赋值，因为JSON是数组
+
+                // 自动分类道具
+                autoCategorizeGadgets(data);
+
+            } catch (err) {
+                console.error('加载道具数据失败:', err);
+                error.value = err.message;
+            } finally {
+                loading.value = false;
             }
         };
-        
-        // 道具分类
-        const gadgetsLight = ['Breach_Charge', 'Gateway', 'Glitch_Grenade','Gravity_Vortex','Infuser','Sonar_Grenade','Nullifier','Thermal_Bore','Thermal_Vision','Tracking_Dart','Vanishing_Bomb'];
-        const gadgetsMedium = ['APS_Turret', 'Breach_Drill', 'Data_Reshaper','Defibrillator','Explosive_Mine','Gas_Mine','Glitch_Trap','Jump_Pad','Zipline','Motion_Sensor'];
-        const gadgetsHeavy = ['Anti-Gravity_Cube', 'Barricade', 'C4','Explosive_Mine','Healing_Emitter','Motion_Sensor','Lockbolt','Pyro_Mine','RPG-7'];
-        const gadgetsUniversal = ['Flashbang','Frag_Grenade','Gas_Grenade','Goo_Grenade','Pyro_Grenade','Smoke_Grenade'];
-        
+
+        // 自动分类道具函数（适配数组结构）
+        const autoCategorizeGadgets = (gadgetsArray) => {
+            gadgetsLight.value = [];
+            gadgetsMedium.value = [];
+            gadgetsHeavy.value = [];
+            gadgetsUniversal.value = [];
+
+            gadgetsArray.forEach(gadgetObj => {
+                // 因为数组中的每个元素是一个对象，如 { "Breach_Charge": { ... } }
+                Object.entries(gadgetObj).forEach(([gadgetName, gadgetData]) => {
+                    if (!gadgetData || !gadgetData.Build) return;
+
+                    const build = gadgetData.Build.toString().toLowerCase();
+
+                    // 检查是否为全职业通用
+                    if (build.includes('all')) {
+                        gadgetsUniversal.value.push(gadgetName);
+                        return;
+                    }
+
+                    // 处理单个或多个职业
+                    const isLight = build.includes('light');
+                    const isMedium = build.includes('medium');
+                    const isHeavy = build.includes('heavy');
+
+                    if (isLight) gadgetsLight.value.push(gadgetName);
+                    if (isMedium) gadgetsMedium.value.push(gadgetName);
+                    if (isHeavy) gadgetsHeavy.value.push(gadgetName);
+                });
+            });
+
+            console.log('自动分类结果:');
+            console.log('Light:', gadgetsLight.value);
+            console.log('Medium:', gadgetsMedium.value);
+            console.log('Heavy:', gadgetsHeavy.value);
+            console.log('Universal:', gadgetsUniversal.value);
+        };
+
         createApp({
             setup() {
                 const searchQuery = ref('');
                 const activeTab = ref('light');
-                
-                const tabs = [
-                    { id: 'light', name: '轻型道具' },
-                    { id: 'medium', name: '中型道具' },
-                    { id: 'heavy', name: '重型道具' },
-                    { id: 'universal', name: '通用道具' }
+
+                // 定义道具类型排序顺序
+                const gadgetTypeOrder = [
+                    'Offensive',    // 进攻道具
+                    'Defensive',    // 防御道具  
+                    'Utility'       // 辅助道具
                 ];
-                
-                // 根据当前选项卡获取道具列表
-                const currentGadgets = computed(() => {
-                    switch(activeTab.value) {
-                        case 'light': return gadgetsLight;
-                        case 'medium': return gadgetsMedium;
-                        case 'heavy': return gadgetsHeavy;
-                        case 'universal': return gadgetsUniversal;
-                        default: return gadgetsLight;
+
+                // 根据道具名称获取道具数据
+                const getGadgetByName = (name) => {
+                    for (const gadgetObj of gadgetsData.value) {
+                        if (gadgetObj[name]) {
+                            return gadgetObj[name];
+                        }
                     }
+                    return null;
+                };
+
+                // 根据道具类型获取排序索引
+                const getGadgetTypeIndex = (gadget) => {
+                    if (!gadget || !gadget.Type) return gadgetTypeOrder.length;
+
+                    const type = gadget.Type.toString();
+                    const index = gadgetTypeOrder.findIndex(orderType =>
+                        type.includes(orderType)
+                    );
+
+                    return index !== -1 ? index : gadgetTypeOrder.length;
+                };
+
+                // 根据当前选项卡获取道具列表并排序
+                const currentGadgets = computed(() => {
+                    let gadgetNames = [];
+                    switch (activeTab.value) {
+                        case 'light': gadgetNames = gadgetsLight.value; break;
+                        case 'medium': gadgetNames = gadgetsMedium.value; break;
+                        case 'heavy': gadgetNames = gadgetsHeavy.value; break;
+                        case 'universal': gadgetNames = gadgetsUniversal.value; break;
+                        default: gadgetNames = gadgetsLight.value;
+                    }
+
+                    // 获取道具数据并排序
+                    const gadgets = gadgetNames.map(name => getGadgetByName(name)).filter(Boolean);
+
+                    // 按照道具类型顺序排序
+                    gadgets.sort((a, b) => {
+                        const indexA = getGadgetTypeIndex(a);
+                        const indexB = getGadgetTypeIndex(b);
+
+                        // 先按类型排序
+                        if (indexA !== indexB) {
+                            return indexA - indexB;
+                        }
+
+                        // 类型相同则按名称排序
+                        return a.game.localeCompare(b.game);
+                    });
+
+                    return gadgets;
                 });
-                
+
                 // 过滤道具
                 const filteredGadgets = computed(() => {
                     const query = searchQuery.value.toLowerCase();
-                    
-                    return currentGadgets.value
-                        .map(name => gadgetsData[name])
-                        .filter(gadget => {
-                            if (!gadget) return false;
-                            return gadget.game.toLowerCase().includes(query);
-                        });
+                    return currentGadgets.value.filter(gadget => {
+                        return gadget.game.toLowerCase().includes(query);
+                    });
                 });
-                
+
+                // 在组件挂载时加载数据
+                onMounted(() => {
+                    loadWeaponData();
+                });
+
                 return {
                     searchQuery,
                     activeTab,
-                    tabs,
-                    filteredGadgets
+                    filteredGadgets,
+                    loading,
+                    error
                 };
             }
         }).mount('#app');
     </script>
 </body>
+
 </html>
-
-
