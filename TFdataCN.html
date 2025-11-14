@@ -29,13 +29,16 @@
     </header>
 
     <div class="main-tabs">
-      <div class="main-tab" :class="{ active: activeView === 'list' }" @click="activeView = 'list'">
-        武器列表
-      </div>
-      <div class="main-tab" :class="{ active: activeView === 'ranking' }" @click="activeView = 'ranking'">
-        击杀速度排名
-      </div>
+    <div class="main-tab" :class="{ active: activeView === 'list' }" @click="activeView = 'list'">
+      武器列表
     </div>
+    <div class="main-tab">
+      <a href="TFdataRank4.html" class="tab-link">道具数据</a>
+    </div>
+    <div class="main-tab" :class="{ active: activeView === 'ranking' }" @click="activeView = 'ranking'">
+      击杀速度排名
+    </div>
+  </div>
 
     <div v-if="activeView === 'list'">
       <div class="category-tabs">
@@ -351,6 +354,7 @@
         const error = ref(null);
 
         const categories = ['Heavy', 'Light', 'Medium'];
+      
 
         // 从外部JSON文件加载武器数据
         const loadWeaponData = async () => {
@@ -375,6 +379,7 @@
           }
         };
 
+        
         // 检查武器是否被选中
         const isSelected = (weapon) => {
           return selectedWeapons.value.some(w => w.weapon_name === weapon.weapon_name);
@@ -542,13 +547,72 @@
           return damageText;
         };
 
-        // 过滤武器列表
+         // 定义武器类型排序顺序和对应的英文关键词
+        const weaponTypeOrder = [
+          { key: 'Handgun', keywords: ['Handgun'] },           // 手枪
+          { key: 'Assault Rifle', keywords: ['Assault Rifle'] }, // 步枪  
+          { key: 'SMG', keywords: ['SMG'] },                   // 冲锋枪
+          { key: 'LMG', keywords: ['LMG'] },                   // 轻机枪
+          { key: 'HMG', keywords: ['HMG'] },                   // 重机枪
+          { key: 'Marksman Rifle', keywords: ['Marksman Rifle'] }, // 精确射击武器
+          { key: 'Grenade Launcher', keywords: ['Grenade Launcher'] }, // 榴弹
+          { key: 'Melee', keywords: ['Melee'] },               // 近战
+          { key: 'Shotgun', keywords: ['Shotgun'] },           // 散弹枪
+          { key: 'Miscellaneous', keywords: ['Miscellaneous'] } // 杂项
+        ];
+
+        // 根据英文关键词识别武器类型
+        const getWeaponTypeByKeywords = (type) => {
+          if (!type) return 'Miscellaneous';
+          
+          const typeStr = type.toString();
+          
+          for (const typeInfo of weaponTypeOrder) {
+            for (const keyword of typeInfo.keywords) {
+              if (typeStr.includes(keyword)) {
+                return typeInfo.key;
+              }
+            }
+          }
+          
+          return 'Miscellaneous'; // 默认归类为杂项
+        };
+
+        // 过滤武器列表并按照指定顺序排序
         const filteredWeapons = computed(() => {
-          return weapons.value.filter(weapon => {
+          let filtered = weapons.value.filter(weapon => {
             const matchesCategory = weapon.infobox.Build === activeCategory.value;
             const matchesSearch = weapon.weapon_name.toLowerCase().includes(searchQuery.value.toLowerCase());
             return matchesCategory && matchesSearch;
           });
+
+          // 按照武器类型顺序排序
+          filtered.sort((a, b) => {
+            const typeA = getWeaponTypeByKeywords(a.infobox.Type);
+            const typeB = getWeaponTypeByKeywords(b.infobox.Type);
+            
+            const indexA = weaponTypeOrder.findIndex(typeInfo => typeInfo.key === typeA);
+            const indexB = weaponTypeOrder.findIndex(typeInfo => typeInfo.key === typeB);
+            
+            // 如果类型在排序列表中，按照列表顺序排序
+            if (indexA !== -1 && indexB !== -1) {
+              return indexA - indexB;
+            }
+            // 如果只有A在列表中，A排在前面
+            else if (indexA !== -1) {
+              return -1;
+            }
+            // 如果只有B在列表中，B排在后面
+            else if (indexB !== -1) {
+              return 1;
+            }
+            // 如果都不在列表中，按照类型名称字母顺序排序
+            else {
+              return typeA.localeCompare(typeB);
+            }
+          });
+
+          return filtered;
         });
 
         const selectedWeapon = ref(null); // 当前选中的武器
