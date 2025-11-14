@@ -1,42 +1,3 @@
-.title-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.author-link {
-    position: absolute;
-    right: -180px;
-    bottom: 15px;
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.author-link:hover {
-    color: #ffcc66;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .title-container {
-        display: block;
-        text-align: center;
-    }
-    
-    .author-link {
-        position: static;
-        display: block;
-        margin-top: 5px;
-        right: auto;
-        bottom: auto;
-    }
-}
 * {
     margin: 0;
     padding: 0;
@@ -57,6 +18,32 @@ body {
     margin: 0 auto;
 }
 
+/* 标题和作者链接样式 */
+.title-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.author-link {
+    position: absolute;
+    right: -180px;
+    bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 18px;;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.author-link:hover {
+    color: #ffcc66;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* 头部样式 */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -68,11 +55,8 @@ header {
 
 h1 {
     font-size: 2.8rem;
-    margin-bottom: 10px;
+    margin: 0 50px 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-right: 50px;
-    margin-left: 50px;
-
 }
 
 .subtitle {
@@ -81,6 +65,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* 搜索框样式 */
 .search-box {
     display: flex;
     justify-content: center;
@@ -91,8 +76,7 @@ h1 {
 .search-input {
     width: 100%;
     max-width: 500px;
-    padding: 15px 20px;
-    padding-left: 45px;
+    padding: 15px 20px 15px 45px;
     border: none;
     border-radius: 50px;
     font-size: 1.1rem;
@@ -108,7 +92,8 @@ h1 {
     color: #666;
 }
 
-.main-tabs {
+/* 标签样式 */
+.main-tabs, .category-tabs, .ranking-tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -116,7 +101,11 @@ h1 {
     margin: 30px 0;
 }
 
-.main-tab {
+.category-tabs, .ranking-tabs {
+    margin: 20px 0;
+}
+
+.main-tab, .category-tab, .ranking-tab {
     padding: 12px 25px;
     background: rgba(255, 255, 255, 0.15);
     border-radius: 8px;
@@ -126,61 +115,53 @@ h1 {
     border: 2px solid transparent;
 }
 
-.main-tab:hover {
+.category-tab, .ranking-tab {
+    padding: 10px 20px;
+    border-width: 1px;
+    border-radius: 6px;
+}
+
+.ranking-tab {
+    border: none;
+}
+
+.main-tab:hover, .category-tab:hover, .ranking-tab:hover {
     background: rgba(255, 255, 255, 0.25);
 }
 
-.main-tab.active {
+.main-tab.active, .category-tab.active {
     background: rgba(255, 255, 255, 0.3);
     border-color: #ff9900;
     box-shadow: 0 0 15px rgba(255, 153, 0, 0.5);
 }
 
-.category-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px 0;
+.ranking-tab.active {
+    background: rgba(255, 153, 0, 0.3);
 }
 
-.category-tab {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    border: 1px solid transparent;
-}
-
-.category-tab:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.category-tab.active {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: #ff9900;
-}
-
-.weapons-grid {
+/* 网格布局 */
+.weapons-grid, .gadgets-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 25px;
     margin-top: 20px;
 }
 
-.weapon-card {
+/* 卡片通用样式 */
+.weapon-card, .gadget-card {
     background: linear-gradient(145deg, #2c3e50, #1a2530);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
     position: relative;
 }
 
-.weapon-card:hover {
+.weapon-card {
+    cursor: pointer;
+}
+
+.weapon-card:hover, .gadget-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
 }
@@ -199,6 +180,7 @@ h1 {
     z-index: 10;
 }
 
+/* 卡片头部 */
 .card-header {
     padding: 20px;
     background: rgba(0, 0, 0, 0.4);
@@ -206,22 +188,34 @@ h1 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.weapon-name {
+.weapon-name, .gadget-name {
     font-size: 1.6rem;
     margin-bottom: 5px;
     color: #ff9900;
 }
 
-.weapon-type {
+.weapon-type, .gadget-type {
     font-size: 1rem;
     opacity: 0.8;
 }
 
+.gadget-build {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: rgba(255, 153, 0, 0.3);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 卡片主体 */
 .card-body {
     padding: 20px;
 }
 
-.weapon-stats {
+.weapon-stats, .gadget-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -242,6 +236,7 @@ h1 {
     font-weight: bold;
 }
 
+/* 近战伤害特殊样式 */
 .melee-damage {
     text-align: center;
     font-size: 1.1rem;
@@ -256,15 +251,7 @@ h1 {
     margin-top: 5px;
 }
 
-.ranking-table .melee-weapon {
-    opacity: 0.6;
-    background: rgba(255, 153, 0, 0.1);
-}
-
-.ranking-table .melee-weapon td {
-    font-style: italic;
-}
-
+/* 排名表格样式 */
 .ranking-section {
     margin: 40px 0;
     background: rgba(0, 0, 0, 0.5);
@@ -280,26 +267,6 @@ h1 {
 
 .ranking-column {
     flex: 1 1 0;
-}
-
-.ranking-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    gap: 15px;
-}
-
-.ranking-tab {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.ranking-tab.active {
-    background: rgba(255, 153, 0, 0.3);
-    font-weight: bold;
 }
 
 .ranking-table {
@@ -326,6 +293,15 @@ h1 {
     background: rgba(255, 255, 255, 0.1);
 }
 
+.ranking-table .melee-weapon {
+    opacity: 0.6;
+    background: rgba(255, 153, 0, 0.1);
+}
+
+.ranking-table .melee-weapon td {
+    font-style: italic;
+}
+
 .rank-number {
     font-weight: bold;
     text-align: center;
@@ -349,6 +325,7 @@ h1 {
     font-weight: bold;
 }
 
+/* 比较功能样式 */
 .compare-section {
     position: fixed;
     bottom: 0;
@@ -466,20 +443,36 @@ h1 {
     grid-column: 1 / -1;
     padding: 40px;
     font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
 }
 
+/* 响应式设计 */
 @media (max-width: 768px) {
-    .weapons-grid {
+    .title-container {
+        display: block;
+        text-align: center;
+    }
+    
+    .author-link {
+        position: static;
+        display: block;
+        margin-top: 5px;
+        right: auto;
+        bottom: auto;
+    }
+    
+    .weapons-grid, .gadgets-grid {
         grid-template-columns: 1fr;
     }
     
     h1 {
         font-size: 2.2rem;
+        margin: 0 20px 10px;
     }
     
     .search-input {
-        padding: 12px 15px;
-        padding-left: 40px;
+        padding: 12px 15px 12px 40px;
     }
     
     .search-icon {
@@ -498,4 +491,9 @@ h1 {
     .compare-table th, .compare-table td {
         padding: 8px 6px;
     }
+    
+    .ranking-section.two-columns {
+        flex-direction: column !important;
+    }
+
 }
