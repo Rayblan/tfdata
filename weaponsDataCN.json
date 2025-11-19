@@ -1972,8 +1972,8 @@
     "Build": "Heavy",
     "Type": "轻机枪 LMG",
     "Price": "Free",
-    "Body": "20",
-    "Head": "30",
+    "Body": "21",
+    "Head": "31.5",
     "Min Range": "25m",
     "Max Range": "35m",
     "Multiplier": "0.50",
@@ -2006,8 +2006,8 @@
             "time_to_kill": "0.41"
           },
           "medium": {
-            "shells_to_kill": "9",
-            "time_to_kill": "0.83"
+            "shells_to_kill": "8",
+            "time_to_kill": "0.72"
           },
           "heavy": {
             "shells_to_kill": "12",
@@ -2021,12 +2021,12 @@
             "time_to_kill": "0.72"
           },
           "medium": {
-            "shells_to_kill": "13",
-            "time_to_kill": "1.24"
+            "shells_to_kill": "12",
+            "time_to_kill": "1.14"
           },
           "heavy": {
-            "shells_to_kill": "18",
-            "time_to_kill": "1.76"
+            "shells_to_kill": "17",
+            "time_to_kill": "1.65"
           }
         }
       ]
