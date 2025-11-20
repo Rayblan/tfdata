@@ -2161,8 +2161,8 @@
     "Build": "Heavy",
     "Type": "散弹 Shotgun",
     "Price": "500",
-    "Body": "7×12",
-    "Head": "7×12",
+    "Body": "7×11",
+    "Head": "7×11",
     "Min Range": "12.5m",
     "Max Range": "20m",
     "Multiplier": "0.62",
@@ -2195,8 +2195,8 @@
             "time_to_kill": "0.32"
           },
           "medium": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.63"
+            "shells_to_kill": "4",
+            "time_to_kill": "0.94"
           },
           "heavy": {
             "shells_to_kill": "5",
@@ -2210,8 +2210,8 @@
             "time_to_kill": "0.32"
           },
           "medium": {
-            "shells_to_kill": "3",
-            "time_to_kill": "0.63"
+            "shells_to_kill": "4",
+            "time_to_kill": "0.94"
           },
           "heavy": {
             "shells_to_kill": "5",
