@@ -663,8 +663,8 @@
     "Build": "Light",
     "Type": "近战 Melee",
     "Price": "500",
-    "Body": "88",
-    "Alt-Fire": "120"
+    "Body": "83",
+    "Alt-Fire": "110"
   },
   "parsed_overflow": {
     "damage_data": {
@@ -690,18 +690,18 @@
             "time_to_kill": "-"
           },
           "medium": {
-            "shells_to_kill": "2",
+            "shells_to_kill": "3",
             "time_to_kill": "-"
           },
           "heavy": {
-            "shells_to_kill": "3",
+            "shells_to_kill": "4",
             "time_to_kill": "-"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "3",
+            "shells_to_kill": "2",
             "time_to_kill": "-"
           },
           "medium": {
