@@ -337,7 +337,7 @@
         "Price":"Free",
         "Cooldown":"45s2.15s Reload",
         "Ammo":"1",
-        "Damage":"100",
+        "Damage":"110",
         "Damage Radius":"1.5m (Inner) 5.5m (Outer)",
         "image_url":"https://www.thefinals.wiki/w/images/b/b8/RPG_Sideview.png"
     },
