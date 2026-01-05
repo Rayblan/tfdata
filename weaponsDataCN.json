@@ -6,10 +6,10 @@
     "Build": "Light",
     "Type": "手枪 Handgun",
     "Price": "500",
-    "Body": "26",
-    "Head": "39",
-    "Min Range": "32m",
-    "Max Range": "40m",
+    "Body": "24",
+    "Head": "36",
+    "Min Range": "30m",
+    "Max Range": "37.5m",
     "Multiplier": "0.4",
     "RPM": "210,450",
     "Magazine": "24",
@@ -36,31 +36,31 @@
         {
           "body_part": "Head",
           "light": {
-            "shells_to_kill": "4",
-            "time_to_kill": "0.40"
+            "shells_to_kill": "5",
+            "time_to_kill": "0.59"
           },
           "medium": {
             "shells_to_kill": "7",
             "time_to_kill": "0.79"
           },
           "heavy": {
-            "shells_to_kill": "9",
-            "time_to_kill": "0.91"
+            "shells_to_kill": "10",
+            "time_to_kill": "1.19"
           }
         },
         {
           "body_part": "Body",
           "light": {
-            "shells_to_kill": "6",
-            "time_to_kill": "0.52"
+            "shells_to_kill": "7",
+            "time_to_kill": "0.79"
           },
           "medium": {
-            "shells_to_kill": "10",
-            "time_to_kill": "1.19"
+            "shells_to_kill": "11",
+            "time_to_kill": "1.29"
           },
           "heavy": {
-            "shells_to_kill": "14",
-            "time_to_kill": "1.64"
+            "shells_to_kill": "15",
+            "time_to_kill": "1.79"
           }
         }
       ]
@@ -664,7 +664,7 @@
     "Type": "近战 Melee",
     "Price": "500",
     "Body": "83",
-    "Alt-Fire": "110"
+    "Alt-Fire": "120"
   },
   "parsed_overflow": {
     "damage_data": {
@@ -821,11 +821,11 @@
     "Build": "Light",
     "Type": "手枪 Handgun",
     "Price": "500",
-    "Body": "40",
-    "Head": "60",
-    "Min Range": "10m",
-    "Max Range": "15m",
-    "Multiplier": "0.62",
+    "Body": "38",
+    "Head": "57",
+    "Min Range": "15m",
+    "Max Range": "25m",
+    "Multiplier": "0.65",
     "RPM": "360",
     "Magazine": "20",
     "Empty Reload": "1.50s",
@@ -859,8 +859,8 @@
             "time_to_kill": "0.67"
           },
           "heavy": {
-            "shells_to_kill": "6",
-            "time_to_kill": "0.83"
+            "shells_to_kill": "7",
+            "time_to_kill": "1.00"
           }
         },
         {
@@ -874,7 +874,7 @@
             "time_to_kill": "1.00"
           },
           "heavy": {
-            "shells_to_kill": "9",
+            "shells_to_kill": "10",
             "time_to_kill": "1.33"
           }
         }
@@ -1232,7 +1232,7 @@
     "Build": "Medium",
     "Type": "近战 Melee",
     "Price": "500",
-    "Body": "50×2 → 60×2 → 65",
+    "Body": "50×2 → 60×2 → 100",
     "Alt-Fire": "Deflect"
   },
   "parsed_overflow": {
@@ -1327,7 +1327,7 @@
     "Price": "500",
     "Body": "22",
     "Head": "33",
-    "Min Range": "30m",
+    "Min Range": "32.5m",
     "Max Range": "37.5m",
     "Multiplier": "0.55",
     "RPM": "525",
@@ -1402,7 +1402,7 @@
     "RPM": "77",
     "Magazine": "7",
     "Empty Reload": "4.3s",
-    "Tactical Reload": "Segmented"
+    "Tactical Reload": "1.5s"
   },
   "parsed_overflow": {
     "damage_data": {
