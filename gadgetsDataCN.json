@@ -5,7 +5,7 @@
         "Build":"Light",
         "Type":"Utility",
         "Price":"Free",
-        "Cooldown":"30s",
+        "Cooldown":"20s",
         "Ammo":"3",
         "Damage":"80",
         "Damage Radius":"2.5m",
@@ -21,7 +21,7 @@
         "Price":"800",
         "Cooldown":"40s",
         "Ammo":"2",
-        "Max Range":"70m",
+        "Max Range":"50m",
         "Duration":"20s",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/0/0c/Gateway.png/348px-Gateway.png"
     },
@@ -31,8 +31,8 @@
         "Build":"Light",
         "Type":"Offensive",
         "Price":"500",
-        "Cooldown":"20s",
-        "Ammo":"2",
+        "Cooldown":"12s",
+        "Ammo":"1",
         "Duration":"5s",
         "Priming Time":"1.5s",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/6/6c/Glitch_Grenade.png/348px-Glitch_Grenade.png"
@@ -90,7 +90,7 @@
         "Build":"Light",
         "Type":"Utility",
         "Price":"500",
-        "Cooldown":"45s",
+        "Cooldown":"35s",
         "Ammo":"2",
         "Damage":"25",
         "Damage Radius":"2.5m (Inner) 3m (Outer)",
@@ -132,7 +132,7 @@
         "image_url":"https://www.thefinals.wiki/w/images/thumb/3/3d/Vanishing_Bomb_Icon.png/348px-Vanishing_Bomb_Icon.png"
     },
     "APS_Turret":{
-        "game":"APS_Turret",
+        "game":"主动防御炮塔 APS_Turret",
         "url":"https://www.thefinals.wiki/wiki/APS_Turret",
         "Build":"Medium",
         "Type":"Defensive",
@@ -149,7 +149,7 @@
         "Build":"Medium",
         "Type":"Utility",
         "Price":"2,200",
-        "Cooldown":"25s",
+        "Cooldown":"20s",
         "Ammo":"1",
         "image_url":"https://www.thefinals.wiki/w/images/c/c6/BreachDrill_Infobox.png"
     },
@@ -185,7 +185,7 @@
         "Price":"500",
         "Cooldown":"15s",
         "Ammo":"1",
-        "Damage":"120",
+        "Damage":"100",
         "Environment Dmg":"1025",
         "Damage Radius":"4.25m",
         "Priming Time":"1.6s",
@@ -300,7 +300,8 @@
         "Price":"2,200",
         "Cooldown":"30s",
         "Ammo":"1",
-        "Radius":"5m",
+        "Radius":"4m",
+        "Healing":"10-20(治疗时间越长越快)",
         "image_url":"https://www.thefinals.wiki/w/images/0/08/HealingEmitter_Infobox.png"
     },
     "Lockbolt":{
@@ -323,7 +324,7 @@
         "Price":"500",
         "Cooldown":"27s",
         "Ammo":"2",
-        "Damage":"79 Trigger25/s Burn",
+        "Damage":"55 Trigger 25/s Burn",
         "Duration":"10s",
         "Priming Time":"1.6s",
         "Max Deployed":"2",
@@ -335,7 +336,7 @@
         "Build":"Heavy",
         "Type":"Offensive",
         "Price":"Free",
-        "Cooldown":"45s2.15s Reload",
+        "Cooldown":"45s 2.15s Reload",
         "Ammo":"1",
         "Damage":"110",
         "Damage Radius":"1.5m (Inner) 5.5m (Outer)",
@@ -353,7 +354,7 @@
         "image_url":"https://www.thefinals.wiki/w/images/thumb/8/86/Flashbang.png/348px-Flashbang.png"
     },
     "Frag_Grenade":{
-        "game":"爆炸手雷 Frag_Grenade",
+        "game":"破片手雷 Frag_Grenade",
         "url":"https://www.thefinals.wiki/wiki/Frag_Grenade",
         "Build":"All",
         "Type":"Offensive",
@@ -362,7 +363,7 @@
         "Ammo":"1",
         "Damage":"140",
         "Environment Dmg":"900",
-        "Damage Radius":"2.5m (Inner) 5m (Outer)",
+        "Damage Radius":"2.75m (Inner) 5.5m (Outer)",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/6/6b/Frag_Grenade.png/348px-Frag_Grenade.png"
     },
     "Gas_Grenade":{
@@ -371,7 +372,7 @@
         "Build":"All",
         "Type":"Offensive",
         "Price":"500",
-        "Cooldown":"30s",
+        "Cooldown":"24s",
         "Ammo":"1",
         "Damage":"30/s to 60/s",
         "Radius":"5m",
@@ -396,7 +397,7 @@
         "Build":"All",
         "Type":"Offensive",
         "Price":"Free",
-        "Cooldown":"30s",
+        "Cooldown":"24s",
         "Ammo":"1",
         "Damage":"20/s",
         "Duration":"12s",
@@ -409,8 +410,8 @@
         "Type":"Defensive",
         "Price":"Free",
         "Cooldown":"50s",
-        "Ammo":"3",
-        "Duration":"17.5s",
+        "Ammo":"2",
+        "Duration":"9s",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/d/d5/Smoke_Grenade.png/348px-Smoke_Grenade.png"
     }}
 ]
