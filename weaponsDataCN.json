@@ -2368,7 +2368,7 @@
     "Build": "Heavy",
     "Type": "近战 Melee",
     "Price": "Free",
-    "Body": "115",
+    "Body": "100",
     "Alt-Fire": "200"
   },
   "parsed_overflow": {
