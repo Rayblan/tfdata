@@ -389,6 +389,7 @@
         "Cooldown":"30s",
         "Ammo":"2",
         "Health":"240 per Goo blob",
+        "Duration":"90s",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/d/d9/Goo_Grenade.png/348px-Goo_Grenade.png"
     },
     "Pyro_Grenade":{
