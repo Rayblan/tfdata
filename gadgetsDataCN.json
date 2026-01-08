@@ -276,7 +276,7 @@
         "Health":"300",
         "Radius":"4m",
         "Duration":"5.5s",
-        "image_url":"",
+        "image_url":""
     },
     "Barricade":{
         "game":"铁盾 Barricade",
