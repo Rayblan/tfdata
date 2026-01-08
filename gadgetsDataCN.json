@@ -265,8 +265,8 @@
         "Duration":"20s",
         "image_url":"https://www.thefinals.wiki/w/images/thumb/1/1c/Anti-Gravity_Cube.png/348px-Anti-Gravity_Cube.png"
     },
-    "Dome Shield":{
-        "game":"球盾",
+    "Dome_Shield":{
+        "game":"球盾 Dome_Shield",
         "url":"https://www.thefinals.wiki/wiki/Dome_Shield",
         "Build":"Heavy",
         "Type":"Defensive",
@@ -276,6 +276,7 @@
         "Health":"300",
         "Radius":"4m",
         "Duration":"5.5s",
+        "image_url":"",
     },
     "Barricade":{
         "game":"铁盾 Barricade",
