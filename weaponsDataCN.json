@@ -1965,15 +1965,15 @@
   }
 },
 {
-  "weapon_name": "M60",
+ "weapon_name": "M60",
   "url": "https://www.thefinals.wiki/wiki/M60",
   "infobox": {
     "Weapon Quote": "“Fully automatic light machine gun”",
     "Build": "Heavy",
     "Type": "轻机枪 LMG",
     "Price": "Free",
-    "Body": "21",
-    "Head": "31.5",
+    "Body": "20",
+    "Head": "30",
     "Min Range": "25m",
     "Max Range": "35m",
     "Multiplier": "0.50",
@@ -2006,8 +2006,8 @@
             "time_to_kill": "0.41"
           },
           "medium": {
-            "shells_to_kill": "8",
-            "time_to_kill": "0.72"
+            "shells_to_kill": "9",
+            "time_to_kill": "0.83"
           },
           "heavy": {
             "shells_to_kill": "12",
@@ -2021,12 +2021,12 @@
             "time_to_kill": "0.72"
           },
           "medium": {
-            "shells_to_kill": "12",
-            "time_to_kill": "1.14"
+            "shells_to_kill": "13",
+            "time_to_kill": "1.24"
           },
           "heavy": {
-            "shells_to_kill": "17",
-            "time_to_kill": "1.65"
+            "shells_to_kill": "18",
+            "time_to_kill": "1.76"
           }
         }
       ]
