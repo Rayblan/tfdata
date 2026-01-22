@@ -1356,30 +1356,30 @@
           "body_part": "Head",
           "light": {
             "shells_to_kill": "5",
-            "time_to_kill": "0.44"
+            "time_to_kill": "0.46"
           },
           "medium": {
             "shells_to_kill": "8",
-            "time_to_kill": "0.78"
+            "time_to_kill": "0.80"
           },
           "heavy": {
             "shells_to_kill": "11",
-            "time_to_kill": "1.11"
+            "time_to_kill": "1.14"
           }
         },
         {
           "body_part": "Body",
           "light": {
             "shells_to_kill": "7",
-            "time_to_kill": "0.67"
+            "time_to_kill": "0.69"
           },
           "medium": {
             "shells_to_kill": "12",
-            "time_to_kill": "1.22"
+            "time_to_kill": "1.26"
           },
           "heavy": {
             "shells_to_kill": "16",
-            "time_to_kill": "1.67"
+            "time_to_kill": "1.71"
           }
         }
       ]
