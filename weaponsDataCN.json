@@ -1360,11 +1360,11 @@
           },
           "medium": {
             "shells_to_kill": "8",
-            "time_to_kill": "0.80"
+            "time_to_kill": "0.81"
           },
           "heavy": {
             "shells_to_kill": "11",
-            "time_to_kill": "1.14"
+            "time_to_kill": "1.15"
           }
         },
         {
@@ -1374,12 +1374,12 @@
             "time_to_kill": "0.69"
           },
           "medium": {
-            "shells_to_kill": "12",
-            "time_to_kill": "1.26"
+            "shells_to_kill": "11",
+            "time_to_kill": "1.15"
           },
           "heavy": {
             "shells_to_kill": "16",
-            "time_to_kill": "1.71"
+            "time_to_kill": "1.73"
           }
         }
       ]
